@@ -32,6 +32,7 @@ var template = React.createElement(
   )
 );
 
+var fullname = 'Elmehdi ELWAFI';
 var templateTwo = React.createElement(
   'div',
   null,
