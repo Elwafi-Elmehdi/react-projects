@@ -14,13 +14,14 @@ var template = (
 );
 
 var fullname = 'Elmehdi ELWAFI'
-
+var age = 21
+var userLocation = 'Marrakech,Morocco'
 
 var templateTwo = (
  <div>
   <h1>{fullname}</h1>
-  <p>Age : 21</p>
-  <p>Location : Marrakech,Morocco</p>
+  <p>Age : {age}</p>
+  <p>Location : {userLocation}</p>
  </div>
 );
 

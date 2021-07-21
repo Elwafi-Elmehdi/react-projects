@@ -33,6 +33,8 @@ var template = React.createElement(
 );
 
 var fullname = 'Elmehdi ELWAFI';
+var age = 21;
+var userLocation = 'Marrakech,Morocco';
 
 var templateTwo = React.createElement(
   'div',
@@ -45,12 +47,14 @@ var templateTwo = React.createElement(
   React.createElement(
     'p',
     null,
-    'Age : 21'
+    'Age : ',
+    age
   ),
   React.createElement(
     'p',
     null,
-    'Location : Marrakech,Morocco'
+    'Location : ',
+    userLocation
   )
 );
 
