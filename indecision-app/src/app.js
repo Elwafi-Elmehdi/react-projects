@@ -1,10 +1,15 @@
 console.log('App.js is running');
 
+var app = {
+ title: "Workout",
+ subTitle:"Run 3 km in 2 days"
+}
+
 // JSX Javascript XML
 var template = (
  <div>
-  <h1>Indecision App</h1>
-  <p>this is some info</p>
+  <h1>{app.title}</h1>
+  <p>{app.subTitle}</p>
 
   <ol>
    <li>first</li>
@@ -31,5 +36,5 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app')
 
-// ReactDOM.render(template, appRoot)
-ReactDOM.render(templateTwo,appRoot);
+ReactDOM.render(template, appRoot)
+// ReactDOM.render(templateTwo,appRoot);
