@@ -13,8 +13,16 @@ var template = (
  </div>
 );
 
+var templateTwo = (
+ <div>
+  <h1>Elmehdi ELWAFI</h1>
+  <p>Age : 21</p>
+  <p>Location : Marrakech,Morocco</p>
+ </div>
+);
 
 
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+// ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo,appRoot);

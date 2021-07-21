@@ -32,6 +32,27 @@ var template = React.createElement(
   )
 );
 
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Elmehdi ELWAFI'
+  ),
+  React.createElement(
+    'p',
+    null,
+    'Age : 21'
+  ),
+  React.createElement(
+    'p',
+    null,
+    'Location : Marrakech,Morocco'
+  )
+);
+
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+// ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot);
