@@ -33,13 +33,14 @@ var template = React.createElement(
 );
 
 var fullname = 'Elmehdi ELWAFI';
+
 var templateTwo = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Elmehdi ELWAFI'
+    fullname
   ),
   React.createElement(
     'p',

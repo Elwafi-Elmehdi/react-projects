@@ -14,9 +14,11 @@ var template = (
 );
 
 var fullname = 'Elmehdi ELWAFI'
+
+
 var templateTwo = (
  <div>
-  <h1>Elmehdi ELWAFI</h1>
+  <h1>{fullname}</h1>
   <p>Age : 21</p>
   <p>Location : Marrakech,Morocco</p>
  </div>
