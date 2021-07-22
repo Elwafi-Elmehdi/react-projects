@@ -44,6 +44,15 @@ var fullname = 'Elmehdi ELWAFI';
 var age = 21;
 var userLocation = 'Marrakech,Morocco';
 
+var getLocation = function getLocation(location) {
+  if (location) return React.createElement(
+    "p",
+    null,
+    "Location: ",
+    location
+  );
+};
+
 var templateTwo = React.createElement(
   "div",
   null,
@@ -61,12 +70,11 @@ var templateTwo = React.createElement(
   React.createElement(
     "p",
     null,
-    "Location : ",
-    user.location
+    getLocation(user.location)
   )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
 // ReactDOM.render(templateTwo,appRoot);

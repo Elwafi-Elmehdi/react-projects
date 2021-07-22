@@ -26,15 +26,20 @@ var fullname = 'Elmehdi ELWAFI'
 var age = 21
 var userLocation = 'Marrakech,Morocco'
 
+const getLocation = (location) => {
+ if(location)
+  return <p>Location: {location}</p>
+}
+
 var templateTwo = (
  <div>
   <h1>{user.name}</h1>
   <p>Age : {user.age}</p>
-  <p>Location : {user.location}</p>
+  <p>{getLocation(user.location)}</p>
  </div>
 );
 
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
 // ReactDOM.render(templateTwo,appRoot);
