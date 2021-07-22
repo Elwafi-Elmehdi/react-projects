@@ -40,10 +40,6 @@ var user = {
   age: 23,
   location: "Marrakech"
 };
-var fullname = 'Elmehdi ELWAFI';
-var age = 21;
-var userLocation = 'Marrakech,Morocco';
-
 var getLocation = function getLocation(location) {
   if (location) return React.createElement(
     "p",

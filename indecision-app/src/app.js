@@ -22,10 +22,6 @@ var user = {
  age:23,
  location:"Marrakech"
 }
-var fullname = 'Elmehdi ELWAFI'
-var age = 21
-var userLocation = 'Marrakech,Morocco'
-
 const getLocation = (location) => {
  if(location)
   return <p>Location: {location}</p>
@@ -34,7 +30,7 @@ const getLocation = (location) => {
 var templateTwo = (
  <div>
   <h1>{user.name ? user.name : 'Anonymous' }</h1>
-  { (user.age && user.age> 18) && <p>Age : {user.age}</p>}
+  { (user.age && user.age > 18) && <p>Age : {user.age}</p>}
   <p>{getLocation(user.location)}</p>
  </div>
 );
