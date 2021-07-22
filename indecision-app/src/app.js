@@ -2,19 +2,17 @@ console.log('App.js is running');
 
 var app = {
  title: "Workout",
- subTitle:"Run 3 km in 2 days"
+ subTitle:"Run 3 km in 2 days",
+ options:['one','two']
 }
 
 // JSX Javascript XML
 var template = (
  <div>
   <h1>{app.title}</h1>
-  <p>{app.subTitle}</p>
-
-  <ol>
-   <li>first</li>
-   <li>second</li>
-  </ol>
+  {app.subTitle && <p>{app.subTitle}</p> }
+  {app.options.length > 0 ? <p>Here is your options</p> : <p>No options</p>}
+  {app.options && <ol><li>{app.options[0]}</li><li>{app.options[1]}</li></ol>}
  </div>
 );
 var user = {
@@ -37,5 +35,5 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app')
 
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)
 // ReactDOM.render(templateTwo,appRoot);
