@@ -73,6 +73,11 @@ var addOne = function addOne() {
 var removeOne = function removeOne() {
   count -= 1;
 };
+
+var reset = function reset() {
+  count = 0;
+};
+
 var templateTwo = React.createElement(
   "div",
   null,
@@ -91,6 +96,11 @@ var templateTwo = React.createElement(
     "button",
     { onClick: removeOne },
     "-1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: reset },
+    "reset"
   )
 );
 
