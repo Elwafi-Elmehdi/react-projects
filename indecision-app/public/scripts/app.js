@@ -29,7 +29,7 @@ var template = React.createElement(
     null,
     "No options"
   ),
-  app.options && React.createElement(
+  React.createElement(
     "ol",
     null,
     React.createElement(
@@ -41,6 +41,16 @@ var template = React.createElement(
       "li",
       null,
       app.options[1]
+    )
+  ),
+  React.createElement(
+    "form",
+    null,
+    React.createElement("input", { type: "text", name: "option" }),
+    React.createElement(
+      "button",
+      null,
+      "Add Option"
     )
   )
 );
