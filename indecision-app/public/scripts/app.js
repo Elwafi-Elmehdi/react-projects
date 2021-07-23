@@ -6,9 +6,8 @@ var app = {
   title: "Workout",
   subTitle: "Run 3 km in 2 days",
   options: ['one', 'two']
-
-  // JSX Javascript XML
-};var template = React.createElement(
+};
+var template = React.createElement(
   "div",
   null,
   React.createElement(
@@ -45,73 +44,7 @@ var app = {
     )
   )
 );
-var user = {
-  name: "ELWAFI",
-  age: 23,
-  location: "Marrakech"
-};
-var getLocation = function getLocation(location) {
-  if (location) return React.createElement(
-    "p",
-    null,
-    "Location: ",
-    location
-  );
-};
-
-// const templateTwo = (
-//   <div>
-//     <h1>{user.name ? user.name : 'Anonymous'}</h1>
-//     {(user.age && user.age > 18) && <p>Age : {user.age}</p>}
-//     {getLocation(user.location)}
-//   </div>
-// );
-var count = 0;
-
-var addOne = function addOne() {
-  count += 1;
-  renderCounterApp();
-};
-var removeOne = function removeOne() {
-  count -= 1;
-  renderCounterApp();
-};
-
-var reset = function reset() {
-  count = 0;
-  renderCounterApp();
-};
 
 var appRoot = document.getElementById('app');
 
-var renderCounterApp = function renderCounterApp() {
-
-  var templateTwo = React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "h1",
-      null,
-      "Count: ",
-      count
-    ),
-    React.createElement(
-      "button",
-      { onClick: addOne },
-      "+1"
-    ),
-    React.createElement(
-      "button",
-      { onClick: removeOne },
-      "-1"
-    ),
-    React.createElement(
-      "button",
-      { onClick: reset },
-      "reset"
-    )
-  );
-  ReactDOM.render(templateTwo, appRoot);
-};
-
-renderCounterApp();
+ReactDOM.render(template, appRoot);
