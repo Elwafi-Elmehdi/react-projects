@@ -59,28 +59,42 @@ var getLocation = function getLocation(location) {
   );
 };
 
+// const templateTwo = (
+//   <div>
+//     <h1>{user.name ? user.name : 'Anonymous'}</h1>
+//     {(user.age && user.age > 18) && <p>Age : {user.age}</p>}
+//     {getLocation(user.location)}
+//   </div>
+// );
+var count = 0;
+var addOne = function addOne() {
+  count += 1;
+};
+var removeOne = function removeOne() {
+  count -= 1;
+};
 var templateTwo = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    user.name ? user.name : 'Anonymous'
-  ),
-  user.age && user.age > 18 && React.createElement(
-    "p",
-    null,
-    "Age : ",
-    user.age
+    "Count: ",
+    count
   ),
   React.createElement(
-    "p",
-    null,
-    getLocation(user.location)
+    "button",
+    { onClick: addOne },
+    "+1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: removeOne },
+    "-1"
   )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
 // ReactDOM.render(templateTwo,appRoot);
