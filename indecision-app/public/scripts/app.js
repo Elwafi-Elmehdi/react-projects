@@ -60,7 +60,7 @@ var renderApp = function renderApp() {
     ),
     React.createElement(
       "button",
-      { onClick: guessOption },
+      { disabled: app.options.length === 0, onClick: guessOption },
       "What Should I do ?"
     ),
     React.createElement(

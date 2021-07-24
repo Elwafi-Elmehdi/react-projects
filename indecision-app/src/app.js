@@ -36,7 +36,7 @@ const renderApp = () => {
       {app.subTitle && <p>{app.subTitle}</p>}
       {app.options.length > 0 ? <p>Here is your options</p> : <p>No options</p>}
       <p>{app.options.length}</p>
-      <button onClick={guessOption}>What Should I do ?</button>
+      <button disabled={app.options.length === 0} onClick={guessOption}>What Should I do ?</button>
       <button onClick={removeAll}>removeAll</button>
       <ol>
         {
