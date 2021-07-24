@@ -23,6 +23,11 @@ const removeAll = () => {
 
 const appRoot = document.getElementById('app')
 
+const guessOption = () => {
+  const randomNum = Math.floor(Math.random() * app.options.length)
+  const option = app.options[randomNum]
+  alert(option)
+}
 
 const renderApp = () => {
   const template = (
@@ -31,6 +36,7 @@ const renderApp = () => {
       {app.subTitle && <p>{app.subTitle}</p>}
       {app.options.length > 0 ? <p>Here is your options</p> : <p>No options</p>}
       <p>{app.options.length}</p>
+      <button onClick={guessOption}>What Should I do ?</button>
       <button onClick={removeAll}>removeAll</button>
       <ol>
         {

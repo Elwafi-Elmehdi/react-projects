@@ -24,6 +24,12 @@ var removeAll = function removeAll() {
 
 var appRoot = document.getElementById('app');
 
+var guessOption = function guessOption() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var option = app.options[randomNum];
+  alert(option);
+};
+
 var renderApp = function renderApp() {
   var template = React.createElement(
     "div",
@@ -51,6 +57,11 @@ var renderApp = function renderApp() {
       "p",
       null,
       app.options.length
+    ),
+    React.createElement(
+      "button",
+      { onClick: guessOption },
+      "What Should I do ?"
     ),
     React.createElement(
       "button",
