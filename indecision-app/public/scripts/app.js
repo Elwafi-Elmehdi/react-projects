@@ -60,16 +60,13 @@ var renderApp = function renderApp() {
     React.createElement(
       "ol",
       null,
-      React.createElement(
-        "li",
-        null,
-        app.options[0]
-      ),
-      React.createElement(
-        "li",
-        null,
-        app.options[1]
-      )
+      app.options.map(function (elem) {
+        return React.createElement(
+          "li",
+          { key: elem },
+          elem
+        );
+      })
     ),
     React.createElement(
       "form",
