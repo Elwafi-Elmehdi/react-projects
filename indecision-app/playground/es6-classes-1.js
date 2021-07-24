@@ -1,5 +1,5 @@
 class Person {
- constructor(name, age = 0) {
+ constructor(name = 'Anonymous', age = 0) {
   this.name = name
   this.age = age
  }
@@ -8,8 +8,12 @@ class Person {
  }
 }
 
-const me = new Person('Elmehdi ELWAFI', 21)
+class Student extends Person {
+
+}
+
+const me = new Student('Elmehdi ELWAFI', 21)
 console.log(me.getDescription());
 
-const other = new Person('hehe')
+const other = new Student()
 console.log(other.getDescription());
