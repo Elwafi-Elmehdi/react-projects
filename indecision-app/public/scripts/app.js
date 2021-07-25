@@ -84,11 +84,6 @@ var Action = function (_React$Component3) {
       console.log('working');
     }
   }, {
-    key: 'handleRemoveAll',
-    value: function handleRemoveAll() {
-      console.log('removeAll working');
-    }
-  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -98,11 +93,6 @@ var Action = function (_React$Component3) {
           'button',
           { onClick: this.handlePick },
           'what should I do?'
-        ),
-        React.createElement(
-          'button',
-          { onClick: this.handleRemoveAll },
-          'Remove All Options'
         )
       );
     }
@@ -121,11 +111,21 @@ var Options = function (_React$Component4) {
   }
 
   _createClass(Options, [{
+    key: 'handleRemoveAll',
+    value: function handleRemoveAll() {
+      console.log('removeAll working');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
         null,
+        React.createElement(
+          'button',
+          { onClick: this.handleRemoveAll },
+          'Remove All Options'
+        ),
         this.props.options.map(function (elem) {
           return React.createElement(Option, { key: elem, optionText: elem });
         })
