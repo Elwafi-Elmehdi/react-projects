@@ -31,6 +31,7 @@ class Action extends React.Component {
   render() {
     return (
       <div>
+
         <button onClick={this.handlePick}>what should I do?</button>
       </div>
     )
