@@ -79,6 +79,11 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
+    key: 'handlePick',
+    value: function handlePick() {
+      console.log('working');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -86,7 +91,7 @@ var Action = function (_React$Component3) {
         null,
         React.createElement(
           'button',
-          null,
+          { onClick: this.handlePick },
           'what should I do?'
         )
       );
@@ -112,13 +117,8 @@ var Options = function (_React$Component4) {
         'div',
         null,
         this.props.options.map(function (elem) {
-          return React.createElement(
-            'p',
-            { key: elem },
-            elem
-          );
-        }),
-        React.createElement(Option, null)
+          return React.createElement(Option, { key: elem, optionText: elem });
+        })
       );
     }
   }]);
@@ -141,7 +141,11 @@ var Option = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        'Option Component Here'
+        React.createElement(
+          'p',
+          { key: this.props.optionText },
+          this.props.optionText
+        )
       );
     }
   }]);
