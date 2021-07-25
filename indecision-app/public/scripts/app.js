@@ -84,6 +84,11 @@ var Action = function (_React$Component3) {
       console.log('working');
     }
   }, {
+    key: 'handleRemoveAll',
+    value: function handleRemoveAll() {
+      console.log('removeAll working');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -93,6 +98,11 @@ var Action = function (_React$Component3) {
           'button',
           { onClick: this.handlePick },
           'what should I do?'
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.handleRemoveAll },
+          'Remove All Options'
         )
       );
     }

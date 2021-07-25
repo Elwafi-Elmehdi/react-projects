@@ -25,14 +25,20 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+
   handlePick() {
     console.log('working')
   }
+
+  handleRemoveAll() {
+    console.log('removeAll working')
+  }
+
   render() {
     return (
       <div>
-
         <button onClick={this.handlePick}>what should I do?</button>
+        <button onClick={this.handleRemoveAll}>Remove All Options</button>
       </div>
     )
   }
