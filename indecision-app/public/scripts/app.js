@@ -11,10 +11,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var CounterApp = function (_React$Component) {
   _inherits(CounterApp, _React$Component);
 
-  function CounterApp() {
+  function CounterApp(props) {
     _classCallCheck(this, CounterApp);
 
-    return _possibleConstructorReturn(this, (CounterApp.__proto__ || Object.getPrototypeOf(CounterApp)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (CounterApp.__proto__ || Object.getPrototypeOf(CounterApp)).call(this, props));
+
+    _this.handleAddOne = _this.handleAddOne.bind(_this);
+    _this.handleMinusOne = _this.handleMinusOne.bind(_this);
+    _this.handleReset = _this.handleReset.bind(_this);
+    return _this;
   }
 
   _createClass(CounterApp, [{
