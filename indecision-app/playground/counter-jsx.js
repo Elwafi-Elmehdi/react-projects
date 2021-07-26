@@ -1,5 +1,14 @@
 class CounterApp extends React.Component {
 
+  handleAddOne() {
+    console.log('handleAddOne');
+  }
+  handleMinusOne() {
+    console.log('handleMinusOne');
+  }
+  handleReset() {
+    console.log('handleReset');
+  }
   render() {
     return (
       <div>
