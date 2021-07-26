@@ -45,17 +45,17 @@ var CounterApp = function (_React$Component) {
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.handleAddOne },
           '+1'
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.handleMinusOne },
           '-1'
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: this.handleReset },
           'reset'
         )
       );
