@@ -10,15 +10,25 @@ class CounterApp extends React.Component {
   }
 
   handleAddOne() {
-    this.setState(() => {
-      return {}
+    this.setState((preState) => {
+      return {
+        count: preState.count + 1
+      }
     })
   }
   handleMinusOne() {
-    console.log('handleMinusOne');
+    this.setState((preState) => {
+      return {
+        count: preState.count - 1
+      }
+    })
   }
   handleReset() {
-    console.log('handleReset');
+    this.setState((preState) => {
+      return {
+        count: 0
+      }
+    })
   }
   render() {
     return (
@@ -36,7 +46,7 @@ ReactDOM.render(<CounterApp />, document.getElementById('app'))
 // let count = 0
 
 // const addOne = () => {
-//  count += 1
+//  count += 1c
 //  renderCounterApp()
 
 // }

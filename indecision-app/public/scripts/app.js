@@ -28,19 +28,29 @@ var CounterApp = function (_React$Component) {
   _createClass(CounterApp, [{
     key: 'handleAddOne',
     value: function handleAddOne() {
-      this.setState(function () {
-        return {};
+      this.setState(function (preState) {
+        return {
+          count: preState.count + 1
+        };
       });
     }
   }, {
     key: 'handleMinusOne',
     value: function handleMinusOne() {
-      console.log('handleMinusOne');
+      this.setState(function (preState) {
+        return {
+          count: preState.count - 1
+        };
+      });
     }
   }, {
     key: 'handleReset',
     value: function handleReset() {
-      console.log('handleReset');
+      this.setState(function (preState) {
+        return {
+          count: 0
+        };
+      });
     }
   }, {
     key: 'render',
@@ -80,7 +90,7 @@ ReactDOM.render(React.createElement(CounterApp, null), document.getElementById('
 // let count = 0
 
 // const addOne = () => {
-//  count += 1
+//  count += 1c
 //  renderCounterApp()
 
 // }
