@@ -16,11 +16,23 @@ var VisibilityToggle = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (VisibilityToggle.__proto__ || Object.getPrototypeOf(VisibilityToggle)).call(this, props));
 
-    _this.setState();
+    _this.state = {
+      visible: false
+    };
+    _this.handleToggle = _this.handleToggle.bind(_this);
     return _this;
   }
 
   _createClass(VisibilityToggle, [{
+    key: 'handleToggle',
+    value: function handleToggle() {
+      this.setState(function (preState) {
+        return {
+          visible: !preState.visible
+        };
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -31,7 +43,11 @@ var VisibilityToggle = function (_React$Component) {
           null,
           'Visibility Toggle App'
         ),
-        React.createElement('button', null)
+        React.createElement(
+          'button',
+          { onCLick: this.handleToggle },
+          this.state.visible ? 'Hide Details' : 'Show Details'
+        )
       );
     }
   }]);
