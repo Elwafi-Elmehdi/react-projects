@@ -17,6 +17,8 @@ var IndicisionApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (IndicisionApp.__proto__ || Object.getPrototypeOf(IndicisionApp)).call(this, props));
 
     _this.handleDeleteAll = _this.handleDeleteAll.bind(_this);
+    _this.handleRandom = _this.handleRandom.bind(_this);
+    _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.state = {
       options: ['1', '2', '3', '4', '5']
     };
@@ -24,6 +26,23 @@ var IndicisionApp = function (_React$Component) {
   }
 
   _createClass(IndicisionApp, [{
+    key: 'handleAddOption',
+    value: function handleAddOption(option) {
+
+      this.setState(function (preState) {
+        return {
+          options: preState.options.concat([option])
+        };
+      });
+    }
+  }, {
+    key: 'handleRandom',
+    value: function handleRandom() {
+      var randomNum = Math.floor(Math.random() * this.state.options.length);
+      var option = this.state.options[randomNum];
+      alert(option);
+    }
+  }, {
     key: 'handleDeleteAll',
     value: function handleDeleteAll() {
       this.setState(function () {
@@ -43,9 +62,15 @@ var IndicisionApp = function (_React$Component) {
         'div',
         null,
         React.createElement(Header, { title: title, subTitle: subTitle }),
-        React.createElement(Action, { hasOptions: this.state.options.length > 0 }),
-        React.createElement(Options, { deleteAll: this.handleDeleteAll, options: this.state.options }),
-        React.createElement(AddOption, null)
+        React.createElement(Action, {
+          hasOptions: this.state.options.length > 0,
+          handleRandom: this.handleRandom
+        }),
+        React.createElement(Options, {
+          deleteAll: this.handleDeleteAll,
+          options: this.state.options
+        }),
+        React.createElement(AddOption, { addOption: this.handleAddOption })
       );
     }
   }]);
@@ -95,11 +120,6 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
-    key: 'handlePick',
-    value: function handlePick() {
-      console.log('working');
-    }
-  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -108,7 +128,7 @@ var Action = function (_React$Component3) {
         React.createElement(
           'button',
           {
-            onClick: this.handlePick,
+            onClick: this.props.handleRandom,
             disabled: !this.props.hasOptions
           },
           'what should I do?'
@@ -180,10 +200,13 @@ var Option = function (_React$Component5) {
 var AddOption = function (_React$Component6) {
   _inherits(AddOption, _React$Component6);
 
-  function AddOption() {
+  function AddOption(props) {
     _classCallCheck(this, AddOption);
 
-    return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+    var _this6 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+
+    _this6.handleAddOption = _this6.handleAddOption.bind(_this6);
+    return _this6;
   }
 
   _createClass(AddOption, [{
@@ -191,7 +214,7 @@ var AddOption = function (_React$Component6) {
     value: function handleAddOption(e) {
       e.preventDefault();
       var option = e.target.elements.option.value.trim();
-      if (option) alert(option);
+      if (option) this.props.addOption(option);
     }
   }, {
     key: 'render',
