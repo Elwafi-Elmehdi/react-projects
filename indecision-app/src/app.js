@@ -54,16 +54,25 @@ class IndicisionApp extends React.Component {
     )
   }
 }
-class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>{this.props.title}</h1>
-        <h2>{this.props.subTitle}</h2>
-      </div>
-    );
-  }
+const Header = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <h2>{props.subTitle}</h2>
+    </div>
+  )
 }
+
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.props.title}</h1>
+//         <h2>{this.props.subTitle}</h2>
+//       </div>
+//     );
+//   }
+// }
 
 const Action = (props) => {
   return (
@@ -118,15 +127,23 @@ const Options = (props) => {
 //   }
 // }
 
-class Option extends React.Component {
-  render() {
-    return (
-      <div>
-        <p key={this.props.optionText}>{this.props.optionText}</p>
-      </div>
-    )
-  }
+const Option = (props) => {
+  return (
+    <div>
+      <p key={props.optionText}>{props.optionText}</p>
+    </div>
+  )
 }
+
+// class Option extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <p key={this.props.optionText}>{this.props.optionText}</p>
+//       </div>
+//     )
+//   }
+// }
 
 class AddOption extends React.Component {
 
