@@ -65,22 +65,35 @@ class Header extends React.Component {
   }
 }
 
-class Action extends React.Component {
-
-
-  render() {
-    return (
-      <div>
-        <button
-          onClick={this.props.handleRandom}
-          disabled={!this.props.hasOptions}
-        >
-          what should I do?
-        </button>
-      </div>
-    )
-  }
+const Action = (props) => {
+  return (
+    <div>
+      <button
+        onClick={props.handleRandom}
+        disabled={!props.hasOptions}
+      >
+        what should I do?
+      </button>
+    </div>
+  )
 }
+
+// class Action extends React.Component {
+
+
+//   render() {
+//     return (
+//       <div>
+//         <button
+//           onClick={this.props.handleRandom}
+//           disabled={!this.props.hasOptions}
+//         >
+//           what should I do?
+//         </button>
+//       </div>
+//     )
+//   }
+// }
 
 class Options extends React.Component {
 
@@ -146,4 +159,4 @@ const User = (props) => {
   )
 }
 
-ReactDOM.render(<User name="Mehdi" age="21" />, document.getElementById('app'))
+ReactDOM.render(<IndicisionApp />, document.getElementById('app'))
