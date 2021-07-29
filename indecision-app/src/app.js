@@ -1,9 +1,17 @@
 class IndicisionApp extends React.Component {
   constructor(props) {
     super(props)
+    this.handleDeleteAll = this.handleDeleteAll.bind(this)
     this.state = {
       options: ['1', '2', '3', '4', '5']
     }
+  }
+  handleDeleteAll() {
+    this.setState(() => {
+      return {
+        options: []
+      }
+    })
   }
   render() {
     const title = 'Indicision'
@@ -14,7 +22,7 @@ class IndicisionApp extends React.Component {
       <div>
         <Header title={title} subTitle={subTitle} />
         <Action hasOptions={this.state.options.length > 0} />
-        <Options options={this.state.options} />
+        <Options deleteAll={this.handleDeleteAll} options={this.state.options} />
         <AddOption />
       </div>
     )
@@ -52,18 +60,11 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleRemoveAll = this.handleRemoveAll.bind(this)
-  }
-  handleRemoveAll() {
-    console.log('removeAll working')
-    console.log(this.props.options);
-  }
+
   render() {
     return (
       <div>
-        <button onClick={this.handleRemoveAll}>Remove All Options</button>
+        <button onClick={this.props.deleteAll}>Remove All Options</button>
         {
           this.props.options.map(elem => <Option key={elem} optionText={elem} />)
         }
