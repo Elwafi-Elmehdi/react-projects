@@ -5,7 +5,7 @@ class IndicisionApp extends React.Component {
     this.handleRandom = this.handleRandom.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
     this.state = {
-      options: []
+      options: props.options
     }
   }
   handleAddOption(option) {
@@ -188,4 +188,4 @@ const User = (props) => {
   )
 }
 
-ReactDOM.render(<IndicisionApp />, document.getElementById('app'))
+ReactDOM.render(<IndicisionApp options={['Option one', 'Option two']} />, document.getElementById('app'))

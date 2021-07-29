@@ -5,7 +5,7 @@ class CounterApp extends React.Component {
     this.handleMinusOne = this.handleMinusOne.bind(this)
     this.handleReset = this.handleReset.bind(this)
     this.state = {
-      count: 0
+      count: props.initNum
     }
   }
 
@@ -40,6 +40,10 @@ class CounterApp extends React.Component {
       </div>
     )
   }
+}
+
+CounterApp.defaultProps = {
+  initNum: 0
 }
 
 ReactDOM.render(<CounterApp />, document.getElementById('app'))
