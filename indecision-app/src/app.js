@@ -14,11 +14,14 @@ class IndicisionApp extends React.Component {
     } else if (this.state.options.indexOf(option) > -1) {
       return "Option already exists on the liste."
     } else {
-      this.setState((preState) => {
-        return {
-          options: preState.options.concat([option])
-        }
-      })
+      this.setState(preState => ({
+        options: preState.options.concat([option])
+      }))
+      // this.setState((preState) => {
+      //   return {
+      //     options: preState.options.concat([option])
+      //   }
+      // })
     }
   }
   handleRandom() {
@@ -27,11 +30,12 @@ class IndicisionApp extends React.Component {
     alert(option)
   }
   handleDeleteAll() {
-    this.setState(() => {
-      return {
-        options: []
-      }
-    })
+    this.setState(() => ({ options: [] }))
+    // this.setState(() => {
+    //   return {
+    //     options: []
+    //   }
+    // })
   }
   render() {
     const title = 'Indicision'
