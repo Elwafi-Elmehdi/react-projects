@@ -4,9 +4,13 @@ class IndicisionApp extends React.Component {
     this.handleDeleteAll = this.handleDeleteAll.bind(this)
     this.handleRandom = this.handleRandom.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
+    this.handleDeleteOne = this.handleDeleteOne.bind(this)
     this.state = {
       options: props.options
     }
+  }
+  handleDeleteOne(option) {
+
   }
   handleAddOption(option) {
     if (!option) {

@@ -19,6 +19,7 @@ var IndicisionApp = function (_React$Component) {
     _this.handleDeleteAll = _this.handleDeleteAll.bind(_this);
     _this.handleRandom = _this.handleRandom.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
+    _this.handleDeleteOne = _this.handleDeleteOne.bind(_this);
     _this.state = {
       options: props.options
     };
@@ -26,6 +27,9 @@ var IndicisionApp = function (_React$Component) {
   }
 
   _createClass(IndicisionApp, [{
+    key: "handleDeleteOne",
+    value: function handleDeleteOne(option) {}
+  }, {
     key: "handleAddOption",
     value: function handleAddOption(option) {
       if (!option) {
