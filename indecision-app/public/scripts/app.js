@@ -99,19 +99,21 @@ var Header = function Header(props) {
     )
   );
 };
+Header.defaultProps = {
+  title: 'some default value'
 
-// class Header extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>{this.props.title}</h1>
-//         <h2>{this.props.subTitle}</h2>
-//       </div>
-//     );
-//   }
-// }
+  // class Header extends React.Component {
+  //   render() {
+  //     return (
+  //       <div>
+  //         <h1>{this.props.title}</h1>
+  //         <h2>{this.props.subTitle}</h2>
+  //       </div>
+  //     );
+  //   }
+  // }
 
-var Action = function Action(props) {
+};var Action = function Action(props) {
   return React.createElement(
     "div",
     null,

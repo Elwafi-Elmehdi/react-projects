@@ -62,6 +62,9 @@ const Header = (props) => {
     </div>
   )
 }
+Header.defaultProps = {
+  title: 'some default value'
+}
 
 // class Header extends React.Component {
 //   render() {
