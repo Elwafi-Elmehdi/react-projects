@@ -5,16 +5,21 @@ class IndicisionApp extends React.Component {
     this.handleRandom = this.handleRandom.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
     this.state = {
-      options: ['1', '2', '3', '4', '5']
+      options: []
     }
   }
   handleAddOption(option) {
-
-    this.setState((preState) => {
-      return {
-        options: preState.options.concat([option])
-      }
-    })
+    if (!option) {
+      return "Entre a valid option";
+    } else if (this.state.options.indexOf(option) > -1) {
+      return "Option already exists on the liste."
+    } else {
+      this.setState((preState) => {
+        return {
+          options: preState.options.concat([option])
+        }
+      })
+    }
   }
   handleRandom() {
     const randomNum = Math.floor(Math.random() * this.state.options.length)
@@ -106,17 +111,25 @@ class AddOption extends React.Component {
   constructor(props) {
     super(props)
     this.handleAddOption = this.handleAddOption.bind(this)
+    this.state = {
+      error: undefined
+    }
   }
 
   handleAddOption(e) {
     e.preventDefault()
     const option = e.target.elements.option.value.trim()
-    if (option)
-      this.props.addOption(option)
+    const error = this.props.addOption(option)
+    this.setState(() => {
+      return {
+        error
+      }
+    })
   }
   render() {
     return (
       <form onSubmit={this.handleAddOption}>
+        {this.state.error && <p>{this.state.error}</p>}
         <input type="text" name="option" />
         <button>Add Option</button>
       </form>
