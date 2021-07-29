@@ -28,7 +28,9 @@ var IndicisionApp = function (_React$Component) {
 
   _createClass(IndicisionApp, [{
     key: "handleDeleteOne",
-    value: function handleDeleteOne(option) {}
+    value: function handleDeleteOne(option) {
+      console.log(option, ' deleted');
+    }
   }, {
     key: "handleAddOption",
     value: function handleAddOption(option) {
@@ -85,7 +87,8 @@ var IndicisionApp = function (_React$Component) {
         }),
         React.createElement(Options, {
           deleteAll: this.handleDeleteAll,
-          options: this.state.options
+          options: this.state.options,
+          deleteOne: this.handleDeleteOne
         }),
         React.createElement(AddOption, { addOption: this.handleAddOption })
       );
@@ -166,7 +169,11 @@ var Options = function Options(props) {
       "Remove All Options"
     ),
     props.options.map(function (elem) {
-      return React.createElement(Option, { key: elem, optionText: elem });
+      return React.createElement(Option, {
+        key: elem,
+        optionText: elem,
+        deleteOne: props.deleteOne
+      });
     })
   );
 };
@@ -192,6 +199,11 @@ var Option = function Option(props) {
       "p",
       { key: props.optionText },
       props.optionText
+    ),
+    React.createElement(
+      "button",
+      { onClick: props.deleteOne },
+      "remove"
     )
   );
 };

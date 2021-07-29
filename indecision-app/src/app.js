@@ -10,7 +10,7 @@ class IndicisionApp extends React.Component {
     }
   }
   handleDeleteOne(option) {
-
+    console.log(option, ' deleted');
   }
   handleAddOption(option) {
     if (!option) {
@@ -56,6 +56,7 @@ class IndicisionApp extends React.Component {
         <Options
           deleteAll={this.handleDeleteAll}
           options={this.state.options}
+          deleteOne={this.handleDeleteOne}
         />
         <AddOption addOption={this.handleAddOption} />
       </div>
@@ -119,7 +120,13 @@ const Options = (props) => {
     <div>
       <button onClick={props.deleteAll}>Remove All Options</button>
       {
-        props.options.map(elem => <Option key={elem} optionText={elem} />)
+        props.options.map(elem =>
+          <Option
+            key={elem}
+            optionText={elem}
+            deleteOne={props.deleteOne}
+          />
+        )
       }
     </div>
   )
@@ -142,6 +149,7 @@ const Option = (props) => {
   return (
     <div>
       <p key={props.optionText}>{props.optionText}</p>
+      <button onClick={props.deleteOne}>remove</button>
     </div>
   )
 }
