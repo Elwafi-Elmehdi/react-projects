@@ -5,10 +5,23 @@ class CounterApp extends React.Component {
     this.handleMinusOne = this.handleMinusOne.bind(this)
     this.handleReset = this.handleReset.bind(this)
     this.state = {
-      count: props.initNum
+      count: 0
     }
   }
+  componentDidMount() {
+    const strNumber = localStorage.getItem('count')
+    const number = Number(strNumber)
+    if (isNaN(number * 2) || !number) {
+      this.setState(() => ({ count: 0 }))
+    }
+    this.setState(() => ({ count: number }))
+  }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.count !== this.state.count) {
+      localStorage.setItem('count', this.state.count)
+    }
+  }
   handleAddOne() {
     this.setState((preState) => {
       return {
@@ -42,9 +55,6 @@ class CounterApp extends React.Component {
   }
 }
 
-CounterApp.defaultProps = {
-  initNum: 0
-}
 
 ReactDOM.render(<CounterApp />, document.getElementById('app'))
 // let count = 0
