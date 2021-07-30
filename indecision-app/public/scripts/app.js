@@ -68,11 +68,6 @@ var IndicisionApp = function (_React$Component) {
             options: preState.options.concat([option])
           };
         });
-        // this.setState((preState) => {
-        //   return {
-        //     options: preState.options.concat([option])
-        //   }
-        // })
       }
     }
   }, {
@@ -88,19 +83,12 @@ var IndicisionApp = function (_React$Component) {
       this.setState(function () {
         return { options: [] };
       });
-      // this.setState(() => {
-      //   return {
-      //     options: []
-      //   }
-      // })
     }
   }, {
     key: 'render',
     value: function render() {
       var title = 'Indicision';
       var subTitle = 'Pute your life in the hands of a computer';
-      // const options = ['1', '2', '3']
-
       return React.createElement(
         'div',
         null,

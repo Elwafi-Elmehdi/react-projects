@@ -38,11 +38,6 @@ class IndicisionApp extends React.Component {
       this.setState(preState => ({
         options: preState.options.concat([option])
       }))
-      // this.setState((preState) => {
-      //   return {
-      //     options: preState.options.concat([option])
-      //   }
-      // })
     }
   }
   handleRandom() {
@@ -52,17 +47,10 @@ class IndicisionApp extends React.Component {
   }
   handleDeleteAll() {
     this.setState(() => ({ options: [] }))
-    // this.setState(() => {
-    //   return {
-    //     options: []
-    //   }
-    // })
   }
   render() {
     const title = 'Indicision'
     const subTitle = 'Pute your life in the hands of a computer'
-    // const options = ['1', '2', '3']
-
     return (
       <div>
         <Header title={title} subTitle={subTitle} />
