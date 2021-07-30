@@ -9,6 +9,9 @@ class IndicisionApp extends React.Component {
       options: props.options
     }
   }
+  componentDidMount() {
+    console.log('componentDidMount!');
+  }
   handleDeleteOne(option) {
     console.log(option, ' deleted');
     this.setState((prevState) => ({
