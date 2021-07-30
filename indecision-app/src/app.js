@@ -9,9 +9,20 @@ class IndicisionApp extends React.Component {
       options: props.options
     }
   }
+
+  // Component Life Cycle Methodes
+
   componentDidMount() {
     console.log('componentDidMount!');
   }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate!');
+  }
+
+  componentWillUnmount() {
+    console.log('Cmp deleted');
+  }
+
   handleDeleteOne(option) {
     console.log(option, ' deleted');
     this.setState((prevState) => ({

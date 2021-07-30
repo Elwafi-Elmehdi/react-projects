@@ -26,10 +26,22 @@ var IndicisionApp = function (_React$Component) {
     return _this;
   }
 
+  // Component Life Cycle Methodes
+
   _createClass(IndicisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       console.log('componentDidMount!');
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      console.log('componentDidUpdate!');
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('Cmp deleted');
     }
   }, {
     key: 'handleDeleteOne',
