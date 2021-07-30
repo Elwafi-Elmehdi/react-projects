@@ -202,7 +202,11 @@ var Option = function Option(props) {
     ),
     React.createElement(
       "button",
-      { onClick: props.deleteOne },
+      {
+        onClick: function onClick(e) {
+          return props.deleteOne(props.optionText);
+        }
+      },
       "remove"
     )
   );
