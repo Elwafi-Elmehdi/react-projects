@@ -16,7 +16,10 @@ class IndicisionApp extends React.Component {
     console.log('componentDidMount!');
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate!');
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options)
+      localStorage.setItem('options', json)
+    }
   }
 
   componentWillUnmount() {
