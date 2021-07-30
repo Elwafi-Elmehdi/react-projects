@@ -1,1 +1,1 @@
-console.log('asjjasjasjsj');
+console.log();
