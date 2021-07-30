@@ -11,6 +11,9 @@ class IndicisionApp extends React.Component {
   }
   handleDeleteOne(option) {
     console.log(option, ' deleted');
+    this.setState((prevState) => ({
+      options: prevState.options.filter(elem => elem !== option)
+    }))
   }
   handleAddOption(option) {
     if (!option) {

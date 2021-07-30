@@ -30,6 +30,13 @@ var IndicisionApp = function (_React$Component) {
     key: "handleDeleteOne",
     value: function handleDeleteOne(option) {
       console.log(option, ' deleted');
+      this.setState(function (prevState) {
+        return {
+          options: prevState.options.filter(function (elem) {
+            return elem !== option;
+          })
+        };
+      });
     }
   }, {
     key: "handleAddOption",
