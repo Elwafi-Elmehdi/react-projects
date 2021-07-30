@@ -34,6 +34,9 @@ class IndicisionApp extends React.Component {
     console.log('Cmp deleted');
   }
 
+
+  // App functionality methods
+
   handleDeleteOne(option) {
     console.log(option, ' deleted');
     this.setState((prevState) => ({
@@ -79,6 +82,7 @@ class IndicisionApp extends React.Component {
     )
   }
 }
+
 const Header = (props) => {
   return (
     <div>
@@ -90,17 +94,6 @@ const Header = (props) => {
 Header.defaultProps = {
   title: 'some default value'
 }
-
-// class Header extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>{this.props.title}</h1>
-//         <h2>{this.props.subTitle}</h2>
-//       </div>
-//     );
-//   }
-// }
 
 const Action = (props) => {
   return (
@@ -115,22 +108,6 @@ const Action = (props) => {
   )
 }
 
-// class Action extends React.Component {
-
-
-//   render() {
-//     return (
-//       <div>
-//         <button
-//           onClick={this.props.handleRandom}
-//           disabled={!this.props.hasOptions}
-//         >
-//           what should I do?
-//         </button>
-//       </div>
-//     )
-//   }
-// }
 const Options = (props) => {
   return (
     <div>
@@ -147,19 +124,6 @@ const Options = (props) => {
     </div>
   )
 }
-// class Options extends React.Component {
-
-//   render() {
-//     return (
-//       <div>
-//         <button onClick={this.props.deleteAll}>Remove All Options</button>
-//         {
-//           this.props.options.map(elem => <Option key={elem} optionText={elem} />)
-//         }
-//       </div>
-//     )
-//   }
-// }
 
 const Option = (props) => {
   return (
@@ -172,16 +136,6 @@ const Option = (props) => {
     </div>
   )
 }
-
-// class Option extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <p key={this.props.optionText}>{this.props.optionText}</p>
-//       </div>
-//     )
-//   }
-// }
 
 class AddOption extends React.Component {
 
@@ -213,15 +167,6 @@ class AddOption extends React.Component {
       </form>
     )
   }
-}
-
-const User = (props) => {
-  return (
-    <div>
-      <p>Name : {props.name}</p>
-      <p>Age : {props.age}</p>
-    </div>
-  )
 }
 
 ReactDOM.render(<IndicisionApp options={[]} />, document.getElementById('app'))

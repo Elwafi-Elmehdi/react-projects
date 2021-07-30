@@ -54,6 +54,9 @@ var IndicisionApp = function (_React$Component) {
     value: function componentWillUnmount() {
       console.log('Cmp deleted');
     }
+
+    // App functionality methods
+
   }, {
     key: 'handleDeleteOne',
     value: function handleDeleteOne(option) {
@@ -139,19 +142,9 @@ var Header = function Header(props) {
 };
 Header.defaultProps = {
   title: 'some default value'
+};
 
-  // class Header extends React.Component {
-  //   render() {
-  //     return (
-  //       <div>
-  //         <h1>{this.props.title}</h1>
-  //         <h2>{this.props.subTitle}</h2>
-  //       </div>
-  //     );
-  //   }
-  // }
-
-};var Action = function Action(props) {
+var Action = function Action(props) {
   return React.createElement(
     'div',
     null,
@@ -166,22 +159,6 @@ Header.defaultProps = {
   );
 };
 
-// class Action extends React.Component {
-
-
-//   render() {
-//     return (
-//       <div>
-//         <button
-//           onClick={this.props.handleRandom}
-//           disabled={!this.props.hasOptions}
-//         >
-//           what should I do?
-//         </button>
-//       </div>
-//     )
-//   }
-// }
 var Options = function Options(props) {
   return React.createElement(
     'div',
@@ -200,19 +177,6 @@ var Options = function Options(props) {
     })
   );
 };
-// class Options extends React.Component {
-
-//   render() {
-//     return (
-//       <div>
-//         <button onClick={this.props.deleteAll}>Remove All Options</button>
-//         {
-//           this.props.options.map(elem => <Option key={elem} optionText={elem} />)
-//         }
-//       </div>
-//     )
-//   }
-// }
 
 var Option = function Option(props) {
   return React.createElement(
@@ -234,16 +198,6 @@ var Option = function Option(props) {
     )
   );
 };
-
-// class Option extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <p key={this.props.optionText}>{this.props.optionText}</p>
-//       </div>
-//     )
-//   }
-// }
 
 var AddOption = function (_React$Component2) {
   _inherits(AddOption, _React$Component2);
@@ -298,24 +252,5 @@ var AddOption = function (_React$Component2) {
 
   return AddOption;
 }(React.Component);
-
-var User = function User(props) {
-  return React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'p',
-      null,
-      'Name : ',
-      props.name
-    ),
-    React.createElement(
-      'p',
-      null,
-      'Age : ',
-      props.age
-    )
-  );
-};
 
 ReactDOM.render(React.createElement(IndicisionApp, { options: [] }), document.getElementById('app'));
