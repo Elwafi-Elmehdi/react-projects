@@ -13,7 +13,15 @@ class IndicisionApp extends React.Component {
   // Component Life Cycle Methodes
 
   componentDidMount() {
-    console.log('componentDidMount!');
+    try {
+      const json = localStorage.getItem('options')
+      const options = JSON.parse(json)
+      if (options) {
+        this.setState(() => ({ options }))
+      }
+    } catch (error) {
+
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.options.length !== this.state.options.length) {
@@ -189,6 +197,9 @@ class AddOption extends React.Component {
     e.preventDefault()
     const option = e.target.elements.option.value.trim()
     const error = this.props.addOption(option)
+    if (!error) {
+      e.target.elements.option.value = ''
+    }
     this.setState(() => ({
       error
     }))
@@ -213,4 +224,4 @@ const User = (props) => {
   )
 }
 
-ReactDOM.render(<IndicisionApp options={['Option one', 'Option two']} />, document.getElementById('app'))
+ReactDOM.render(<IndicisionApp options={[]} />, document.getElementById('app'))

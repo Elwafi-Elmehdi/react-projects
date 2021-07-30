@@ -31,7 +31,15 @@ var IndicisionApp = function (_React$Component) {
   _createClass(IndicisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('componentDidMount!');
+      try {
+        var json = localStorage.getItem('options');
+        var options = JSON.parse(json);
+        if (options) {
+          this.setState(function () {
+            return { options: options };
+          });
+        }
+      } catch (error) {}
     }
   }, {
     key: 'componentDidUpdate',
@@ -258,6 +266,9 @@ var AddOption = function (_React$Component2) {
       e.preventDefault();
       var option = e.target.elements.option.value.trim();
       var error = this.props.addOption(option);
+      if (!error) {
+        e.target.elements.option.value = '';
+      }
       this.setState(function () {
         return {
           error: error
@@ -307,4 +318,4 @@ var User = function User(props) {
   );
 };
 
-ReactDOM.render(React.createElement(IndicisionApp, { options: ['Option one', 'Option two'] }), document.getElementById('app'));
+ReactDOM.render(React.createElement(IndicisionApp, { options: [] }), document.getElementById('app'));
