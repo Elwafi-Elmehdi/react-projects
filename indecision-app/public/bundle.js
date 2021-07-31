@@ -70,15 +70,24 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils_js__);
 
 console.log('sasas');
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* carre */](4));
+console.log(add(4));
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return carre; });
+/* unused harmony export add */
 console.log('utils is running');
+
+const carre = x => x * x
+const add = x => x + x
+
+
 
 /***/ })
 /******/ ]);
