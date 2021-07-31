@@ -1,6 +1,9 @@
 console.log('utils is running');
 
-export const carre = x => x * x
-export const add = (x, y) => (x + y)
+const carre = x => x * x
+const add = (x, y) => (x + y)
+const substract = (x, y) => (x - y)
+
+export { carre, add, substract as default }
 
 // export { carre, add }
