@@ -1,8 +1,12 @@
 // import validator from 'validator'
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import AddOption from './components/AddOption'
 import Header from './components/Header'
+import Action from './components/Action'
+import Options from './components/Options'
+import Option from './components/Option'
 
 class IndicisionApp extends React.Component {
  constructor(props) {
@@ -37,11 +41,6 @@ class IndicisionApp extends React.Component {
   }
  }
 
- componentWillUnmount() {
-  console.log('Cmp deleted');
- }
-
-
  // App functionality methods
 
  handleDeleteOne(option) {
@@ -50,6 +49,7 @@ class IndicisionApp extends React.Component {
    options: prevState.options.filter(elem => elem !== option)
   }))
  }
+
  handleAddOption(option) {
   if (!option) {
    return "Entre a valid option";
@@ -66,9 +66,11 @@ class IndicisionApp extends React.Component {
   const option = this.state.options[randomNum];
   alert(option)
  }
+
  handleDeleteAll() {
   this.setState(() => ({ options: [] }))
  }
+
  render() {
   const title = 'Indicision'
   const subTitle = 'Pute your life in the hands of a computer'
@@ -88,50 +90,6 @@ class IndicisionApp extends React.Component {
    </div>
   )
  }
-}
-
-
-
-const Action = (props) => {
- return (
-  <div>
-   <button
-    onClick={props.handleRandom}
-    disabled={!props.hasOptions}
-   >
-    what should I do?
-   </button>
-  </div>
- )
-}
-
-const Options = (props) => {
- return (
-  <div>
-   <button onClick={props.deleteAll}>Remove All Options</button>
-   {
-    props.options.map(elem =>
-     <Option
-      key={elem}
-      optionText={elem}
-      deleteOne={props.deleteOne}
-     />
-    )
-   }
-  </div>
- )
-}
-
-const Option = (props) => {
- return (
-  <div>
-   <p key={props.optionText}>{props.optionText}</p>
-   <button
-    onClick={(e) => props.deleteOne(props.optionText)}
-   >remove
-   </button>
-  </div>
- )
 }
 
 ReactDOM.render(<IndicisionApp options={[]} />, document.getElementById('app'))

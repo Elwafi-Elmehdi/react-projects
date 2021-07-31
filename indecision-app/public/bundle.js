@@ -1035,6 +1035,18 @@ var _Header = __webpack_require__(36);
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _Action = __webpack_require__(37);
+
+var _Action2 = _interopRequireDefault(_Action);
+
+var _Options = __webpack_require__(38);
+
+var _Options2 = _interopRequireDefault(_Options);
+
+var _Option = __webpack_require__(39);
+
+var _Option2 = _interopRequireDefault(_Option);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1084,11 +1096,6 @@ var IndicisionApp = function (_React$Component) {
         var json = JSON.stringify(this.state.options);
         localStorage.setItem('options', json);
       }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      console.log('Cmp deleted');
     }
 
     // App functionality methods
@@ -1143,11 +1150,11 @@ var IndicisionApp = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(_Header2.default, { title: title, subTitle: subTitle }),
-        _react2.default.createElement(Action, {
+        _react2.default.createElement(_Action2.default, {
           hasOptions: this.state.options.length > 0,
           handleRandom: this.handleRandom
         }),
-        _react2.default.createElement(Options, {
+        _react2.default.createElement(_Options2.default, {
           deleteAll: this.handleDeleteAll,
           options: this.state.options,
           deleteOne: this.handleDeleteOne
@@ -1159,61 +1166,6 @@ var IndicisionApp = function (_React$Component) {
 
   return IndicisionApp;
 }(_react2.default.Component);
-
-var Action = function Action(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'button',
-      {
-        onClick: props.handleRandom,
-        disabled: !props.hasOptions
-      },
-      'what should I do?'
-    )
-  );
-};
-
-var Options = function Options(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'button',
-      { onClick: props.deleteAll },
-      'Remove All Options'
-    ),
-    props.options.map(function (elem) {
-      return _react2.default.createElement(Option, {
-        key: elem,
-        optionText: elem,
-        deleteOne: props.deleteOne
-      });
-    })
-  );
-};
-
-var Option = function Option(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'p',
-      { key: props.optionText },
-      props.optionText
-    ),
-    _react2.default.createElement(
-      'button',
-      {
-        onClick: function onClick(e) {
-          return props.deleteOne(props.optionText);
-        }
-      },
-      'remove'
-    )
-  );
-};
 
 _reactDom2.default.render(_react2.default.createElement(IndicisionApp, { options: [] }), document.getElementById('app'));
 
@@ -21791,6 +21743,115 @@ Header.defaultProps = {
   title: 'some default value'
 };
 exports.default = Header;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Action = function Action(props) {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "button",
+      {
+        onClick: props.handleRandom,
+        disabled: !props.hasOptions
+      },
+      "what should I do?"
+    )
+  );
+};
+exports.default = Action;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Options = function Options(props) {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "button",
+      { onClick: props.deleteAll },
+      "Remove All Options"
+    ),
+    props.options.map(function (elem) {
+      return _react2.default.createElement(Option, {
+        key: elem,
+        optionText: elem,
+        deleteOne: props.deleteOne
+      });
+    })
+  );
+};
+exports.default = Options;
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Option = function Option(props) {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "p",
+      { key: props.optionText },
+      props.optionText
+    ),
+    _react2.default.createElement(
+      "button",
+      {
+        onClick: function onClick(e) {
+          return props.deleteOne(props.optionText);
+        }
+      },
+      "remove"
+    )
+  );
+};
+exports.default = Option;
 
 /***/ })
 /******/ ]);
