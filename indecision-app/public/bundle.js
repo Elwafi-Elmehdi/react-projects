@@ -1017,8 +1017,6 @@ if (process.env.NODE_ENV === 'production') {
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
@@ -1027,143 +1025,13 @@ var _reactDom = __webpack_require__(19);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _AddOption = __webpack_require__(35);
+var _IndecisionApp = __webpack_require__(40);
 
-var _AddOption2 = _interopRequireDefault(_AddOption);
-
-var _Header = __webpack_require__(36);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _Action = __webpack_require__(37);
-
-var _Action2 = _interopRequireDefault(_Action);
-
-var _Options = __webpack_require__(38);
-
-var _Options2 = _interopRequireDefault(_Options);
+var _IndecisionApp2 = _interopRequireDefault(_IndecisionApp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import validator from 'validator'
-
-
-var IndicisionApp = function (_React$Component) {
-  _inherits(IndicisionApp, _React$Component);
-
-  function IndicisionApp(props) {
-    _classCallCheck(this, IndicisionApp);
-
-    var _this = _possibleConstructorReturn(this, (IndicisionApp.__proto__ || Object.getPrototypeOf(IndicisionApp)).call(this, props));
-
-    _this.handleDeleteAll = _this.handleDeleteAll.bind(_this);
-    _this.handleRandom = _this.handleRandom.bind(_this);
-    _this.handleAddOption = _this.handleAddOption.bind(_this);
-    _this.handleDeleteOne = _this.handleDeleteOne.bind(_this);
-    _this.state = {
-      options: props.options
-    };
-    return _this;
-  }
-
-  // Component Life Cycle Methodes
-
-  _createClass(IndicisionApp, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      try {
-        var json = localStorage.getItem('options');
-        var options = JSON.parse(json);
-        if (options) {
-          this.setState(function () {
-            return { options: options };
-          });
-        }
-      } catch (error) {}
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate(prevProps, prevState) {
-      if (prevState.options.length !== this.state.options.length) {
-        var json = JSON.stringify(this.state.options);
-        localStorage.setItem('options', json);
-      }
-    }
-
-    // App functionality methods
-
-  }, {
-    key: 'handleDeleteOne',
-    value: function handleDeleteOne(option) {
-      console.log(option, ' deleted');
-      this.setState(function (prevState) {
-        return {
-          options: prevState.options.filter(function (elem) {
-            return elem !== option;
-          })
-        };
-      });
-    }
-  }, {
-    key: 'handleAddOption',
-    value: function handleAddOption(option) {
-      if (!option) {
-        return "Entre a valid option";
-      } else if (this.state.options.indexOf(option) > -1) {
-        return "Option already exists on the liste.";
-      } else {
-        this.setState(function (preState) {
-          return {
-            options: preState.options.concat([option])
-          };
-        });
-      }
-    }
-  }, {
-    key: 'handleRandom',
-    value: function handleRandom() {
-      var randomNum = Math.floor(Math.random() * this.state.options.length);
-      var option = this.state.options[randomNum];
-      alert(option);
-    }
-  }, {
-    key: 'handleDeleteAll',
-    value: function handleDeleteAll() {
-      this.setState(function () {
-        return { options: [] };
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var title = 'Indicision';
-      var subTitle = 'Pute your life in the hands of a computer';
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_Header2.default, { title: title, subTitle: subTitle }),
-        _react2.default.createElement(_Action2.default, {
-          hasOptions: this.state.options.length > 0,
-          handleRandom: this.handleRandom
-        }),
-        _react2.default.createElement(_Options2.default, {
-          deleteAll: this.handleDeleteAll,
-          options: this.state.options,
-          deleteOne: this.handleDeleteOne
-        }),
-        _react2.default.createElement(_AddOption2.default, { addOption: this.handleAddOption })
-      );
-    }
-  }]);
-
-  return IndicisionApp;
-}(_react2.default.Component);
-
-_reactDom2.default.render(_react2.default.createElement(IndicisionApp, { options: [] }), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(_IndecisionApp2.default, null), document.getElementById('app')); // import validator from 'validator'
 
 /***/ }),
 /* 17 */
@@ -21852,6 +21720,160 @@ var Option = function Option(props) {
   );
 };
 exports.default = Option;
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _AddOption = __webpack_require__(35);
+
+var _AddOption2 = _interopRequireDefault(_AddOption);
+
+var _Header = __webpack_require__(36);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Options = __webpack_require__(38);
+
+var _Options2 = _interopRequireDefault(_Options);
+
+var _Action = __webpack_require__(37);
+
+var _Action2 = _interopRequireDefault(_Action);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var IndicisionApp = function (_React$Component) {
+  _inherits(IndicisionApp, _React$Component);
+
+  function IndicisionApp(props) {
+    _classCallCheck(this, IndicisionApp);
+
+    var _this = _possibleConstructorReturn(this, (IndicisionApp.__proto__ || Object.getPrototypeOf(IndicisionApp)).call(this, props));
+
+    _this.handleDeleteAll = _this.handleDeleteAll.bind(_this);
+    _this.handleRandom = _this.handleRandom.bind(_this);
+    _this.handleAddOption = _this.handleAddOption.bind(_this);
+    _this.handleDeleteOne = _this.handleDeleteOne.bind(_this);
+    _this.state = {
+      options: props.options
+    };
+    return _this;
+  }
+
+  // Component Life Cycle Methodes
+
+  _createClass(IndicisionApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      try {
+        var json = localStorage.getItem('options');
+        var options = JSON.parse(json);
+        if (options) {
+          this.setState(function () {
+            return { options: options };
+          });
+        }
+      } catch (error) {}
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.options.length !== this.state.options.length) {
+        var json = JSON.stringify(this.state.options);
+        localStorage.setItem('options', json);
+      }
+    }
+
+    // App functionality methods
+
+  }, {
+    key: "handleDeleteOne",
+    value: function handleDeleteOne(option) {
+      console.log(option, ' deleted');
+      this.setState(function (prevState) {
+        return {
+          options: prevState.options.filter(function (elem) {
+            return elem !== option;
+          })
+        };
+      });
+    }
+  }, {
+    key: "handleAddOption",
+    value: function handleAddOption(option) {
+      if (!option) {
+        return "Entre a valid option";
+      } else if (this.state.options.indexOf(option) > -1) {
+        return "Option already exists on the liste.";
+      } else {
+        this.setState(function (preState) {
+          return {
+            options: preState.options.concat([option])
+          };
+        });
+      }
+    }
+  }, {
+    key: "handleRandom",
+    value: function handleRandom() {
+      var randomNum = Math.floor(Math.random() * this.state.options.length);
+      var option = this.state.options[randomNum];
+      alert(option);
+    }
+  }, {
+    key: "handleDeleteAll",
+    value: function handleDeleteAll() {
+      this.setState(function () {
+        return { options: [] };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var title = 'Indicision';
+      var subTitle = 'Pute your life in the hands of a computer';
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_Header2.default, { title: title, subTitle: subTitle }),
+        _react2.default.createElement(_Action2.default, {
+          hasOptions: this.state.options.length > 0,
+          handleRandom: this.handleRandom
+        }),
+        _react2.default.createElement(_Options2.default, {
+          deleteAll: this.handleDeleteAll,
+          options: this.state.options,
+          deleteOne: this.handleDeleteOne
+        }),
+        _react2.default.createElement(_AddOption2.default, { addOption: this.handleAddOption })
+      );
+    }
+  }]);
+
+  return IndicisionApp;
+}(_react2.default.Component);
+
+exports.default = IndicisionApp;
 
 /***/ })
 /******/ ]);
