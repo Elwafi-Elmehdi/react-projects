@@ -6,7 +6,6 @@ import AddOption from './components/AddOption'
 import Header from './components/Header'
 import Action from './components/Action'
 import Options from './components/Options'
-import Option from './components/Option'
 
 class IndicisionApp extends React.Component {
  constructor(props) {

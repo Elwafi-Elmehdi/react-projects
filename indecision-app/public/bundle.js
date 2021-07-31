@@ -1043,10 +1043,6 @@ var _Options = __webpack_require__(38);
 
 var _Options2 = _interopRequireDefault(_Options);
 
-var _Option = __webpack_require__(39);
-
-var _Option2 = _interopRequireDefault(_Option);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21792,6 +21788,10 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Option = __webpack_require__(39);
+
+var _Option2 = _interopRequireDefault(_Option);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Options = function Options(props) {
@@ -21804,7 +21804,7 @@ var Options = function Options(props) {
       "Remove All Options"
     ),
     props.options.map(function (elem) {
-      return _react2.default.createElement(Option, {
+      return _react2.default.createElement(_Option2.default, {
         key: elem,
         optionText: elem,
         deleteOne: props.deleteOne
