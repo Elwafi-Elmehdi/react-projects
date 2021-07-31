@@ -80,14 +80,16 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](4, 100));
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return carre; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
 console.log('utils is running');
 
 const carre = x => x * x
+/* harmony export (immutable) */ __webpack_exports__["b"] = carre;
+
 const add = (x, y) => (x + y)
+/* harmony export (immutable) */ __webpack_exports__["a"] = add;
 
 
+// export { carre, add }
 
 /***/ })
 /******/ ]);
