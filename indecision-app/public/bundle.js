@@ -79,6 +79,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+const template = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('p', {}, 'testing imported react modules.')
+
+__WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render(template, document.getElementById('app'))
+
 console.log(__WEBPACK_IMPORTED_MODULE_0_validator___default.a.isEmail('mehdi@ksaks.com'));
 
 /***/ }),
