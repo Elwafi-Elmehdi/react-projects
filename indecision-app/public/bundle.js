@@ -1031,6 +1031,10 @@ var _AddOption = __webpack_require__(35);
 
 var _AddOption2 = _interopRequireDefault(_AddOption);
 
+var _Header = __webpack_require__(36);
+
+var _Header2 = _interopRequireDefault(_Header);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1138,7 +1142,7 @@ var IndicisionApp = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(Header, { title: title, subTitle: subTitle }),
+        _react2.default.createElement(_Header2.default, { title: title, subTitle: subTitle }),
         _react2.default.createElement(Action, {
           hasOptions: this.state.options.length > 0,
           handleRandom: this.handleRandom
@@ -1155,26 +1159,6 @@ var IndicisionApp = function (_React$Component) {
 
   return IndicisionApp;
 }(_react2.default.Component);
-
-var Header = function Header(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'h1',
-      null,
-      props.title
-    ),
-    _react2.default.createElement(
-      'h2',
-      null,
-      props.subTitle
-    )
-  );
-};
-Header.defaultProps = {
-  title: 'some default value'
-};
 
 var Action = function Action(props) {
   return _react2.default.createElement(
@@ -21769,6 +21753,44 @@ var AddOption = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AddOption;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header(props) {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "h1",
+      null,
+      props.title
+    ),
+    _react2.default.createElement(
+      "h2",
+      null,
+      props.subTitle
+    )
+  );
+};
+Header.defaultProps = {
+  title: 'some default value'
+};
+exports.default = Header;
 
 /***/ })
 /******/ ]);

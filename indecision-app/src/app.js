@@ -2,6 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import AddOption from './components/AddOption'
+import Header from './components/Header'
 
 class IndicisionApp extends React.Component {
  constructor(props) {
@@ -89,17 +90,7 @@ class IndicisionApp extends React.Component {
  }
 }
 
-const Header = (props) => {
- return (
-  <div>
-   <h1>{props.title}</h1>
-   <h2>{props.subTitle}</h2>
-  </div>
- )
-}
-Header.defaultProps = {
- title: 'some default value'
-}
+
 
 const Action = (props) => {
  return (
