@@ -72,20 +72,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
 
 console.log('sasas');
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* carre */](4));
-console.log(add(4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* carre */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](4, 100));
 
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return carre; });
-/* unused harmony export add */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return carre; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
 console.log('utils is running');
 
 const carre = x => x * x
-const add = x => x + x
+const add = (x, y) => (x + y)
 
 
 
