@@ -6,15 +6,15 @@ import Options from "./Options";
 import Action from "./Action";
 
 export default class IndicisionApp extends React.Component {
+	state = {
+		options: [],
+	};
 	constructor(props) {
 		super(props);
 		this.handleDeleteAll = this.handleDeleteAll.bind(this);
 		this.handleRandom = this.handleRandom.bind(this);
 		this.handleAddOption = this.handleAddOption.bind(this);
 		this.handleDeleteOne = this.handleDeleteOne.bind(this);
-		this.state = {
-			options: props.options,
-		};
 	}
 
 	// Component Life Cycle Methodes
