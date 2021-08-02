@@ -82,7 +82,10 @@ export default class IndicisionApp extends React.Component {
 					deleteOne={this.handleDeleteOne}
 				/>
 				<AddOption addOption={this.handleAddOption} />
-				<OptionModal selectedOption={this.state.selectedOption} />
+				<OptionModal
+					handleSelectedOption={this.handleSelectedOption}
+					selectedOption={this.state.selectedOption}
+				/>
 			</div>
 		);
 	}
