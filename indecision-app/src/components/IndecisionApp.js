@@ -52,6 +52,8 @@ export default class IndicisionApp extends React.Component {
 		}
 	};
 
+	handleSelectedOption = () => this.setState(() => ({ selectedOption: "" }));
+
 	handleRandom = () => {
 		const randomNum = Math.floor(Math.random() * this.state.options.length);
 		const option = this.state.options[randomNum];
