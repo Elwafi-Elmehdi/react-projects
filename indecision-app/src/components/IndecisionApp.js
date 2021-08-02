@@ -4,10 +4,12 @@ import AddOption from "./AddOption";
 import Header from "./Header";
 import Options from "./Options";
 import Action from "./Action";
+import OptionModal from "./OptionModal";
 
 export default class IndicisionApp extends React.Component {
 	state = {
 		options: [],
+		selectedOption: undefined,
 	};
 
 	// Component Life Cycle Methodes
@@ -53,7 +55,9 @@ export default class IndicisionApp extends React.Component {
 	handleRandom = () => {
 		const randomNum = Math.floor(Math.random() * this.state.options.length);
 		const option = this.state.options[randomNum];
-		alert(option);
+		this.setState(() => ({
+			selectedOption: option,
+		}));
 	};
 
 	handleDeleteAll = () => {
@@ -76,6 +80,7 @@ export default class IndicisionApp extends React.Component {
 					deleteOne={this.handleDeleteOne}
 				/>
 				<AddOption addOption={this.handleAddOption} />
+				<OptionModal selectedOption={this.state.selectedOption} />
 			</div>
 		);
 	}
