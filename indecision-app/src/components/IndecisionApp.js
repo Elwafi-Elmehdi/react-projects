@@ -72,20 +72,22 @@ export default class IndicisionApp extends React.Component {
 		return (
 			<div>
 				<Header title={title} subTitle={subTitle} />
-				<Action
-					hasOptions={this.state.options.length > 0}
-					handleRandom={this.handleRandom}
-				/>
-				<Options
-					deleteAll={this.handleDeleteAll}
-					options={this.state.options}
-					deleteOne={this.handleDeleteOne}
-				/>
-				<AddOption addOption={this.handleAddOption} />
-				<OptionModal
-					handleSelectedOption={this.handleSelectedOption}
-					selectedOption={this.state.selectedOption}
-				/>
+				<div className="container">
+					<Action
+						hasOptions={this.state.options.length > 0}
+						handleRandom={this.handleRandom}
+					/>
+					<Options
+						deleteAll={this.handleDeleteAll}
+						options={this.state.options}
+						deleteOne={this.handleDeleteOne}
+					/>
+					<AddOption addOption={this.handleAddOption} />
+					<OptionModal
+						handleSelectedOption={this.handleSelectedOption}
+						selectedOption={this.state.selectedOption}
+					/>
+				</div>
 			</div>
 		);
 	}
