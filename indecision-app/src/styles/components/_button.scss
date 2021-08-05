@@ -2,4 +2,7 @@
 	background-color: $purple;
 	border: none;
 	border-bottom: 0.6rem solid darken($purple, $amount: 10%);
+	color: white;
+	font-weight: bold;
+	font-size: $l-size;
 }
