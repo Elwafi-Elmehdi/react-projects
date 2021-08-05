@@ -12,3 +12,20 @@
 .big-button:disabled {
 	opacity: 0.5;
 }
+
+.button {
+	padding: $s-size;
+	background-color: $purple;
+	color: white;
+	font-weight: 500;
+	font-size: $s-size;
+	border: none;
+	border-bottom: 0.3rem solid darken($color: $purple, $amount: 10%);
+}
+
+.button--link {
+	padding: 0;
+	background-color: none;
+	color: $off-white;
+	border: none;
+}
