@@ -1,5 +1,6 @@
 .widget {
 	background: $light-blue;
+	margin-bottom: $xl-size;
 }
 
 .widget-header {
@@ -12,4 +13,12 @@
 
 .options__header {
 	margin: 0;
+}
+
+.widget__message {
+	color: $off-white;
+	margin: 0;
+	text-align: center;
+	padding: $l-size;
+	border-bottom: 0.3rem solid lighten($color: $light-blue, $amount: 10%);
 }
