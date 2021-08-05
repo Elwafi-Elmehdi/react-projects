@@ -2,7 +2,11 @@ import React from "react";
 
 const Action = (props) => (
 	<div>
-		<button onClick={props.handleRandom} disabled={!props.hasOptions}>
+		<button
+			className="big-button"
+			onClick={props.handleRandom}
+			disabled={!props.hasOptions}
+		>
 			what should I do?
 		</button>
 	</div>

@@ -1,2 +1,5 @@
 .big-button {
+	background-color: $purple;
+	border: none;
+	border-bottom: 0.6rem solid darken($purple, $amount: 10%);
 }
