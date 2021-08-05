@@ -15,8 +15,13 @@ const Options = (props) => (
 			</p>
 		)}
 
-		{props.options.map((elem) => (
-			<Option key={elem} optionText={elem} deleteOne={props.deleteOne} />
+		{props.options.map((elem, index) => (
+			<Option
+				count={index + 1}
+				key={elem}
+				optionText={elem}
+				deleteOne={props.deleteOne}
+			/>
 		))}
 	</div>
 );
