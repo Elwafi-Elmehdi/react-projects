@@ -4,3 +4,16 @@
 	margin: $m-size 0 0 0;
 	padding: 0 $m-size;
 }
+.add-option {
+	display: flex;
+	padding: $m-size;
+}
+.add-option__input {
+	flex-grow: 1;
+	border: none;
+	color: $off-white;
+	padding: $s-size;
+	background: $dark-blue;
+	border-bottom: 0.3rem solid darken($purple, $amount: 10%);
+	margin-right: $s-size;
+}
