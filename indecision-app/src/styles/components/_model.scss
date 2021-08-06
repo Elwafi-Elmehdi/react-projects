@@ -19,4 +19,14 @@
 
 .modal {
 	background: $light-blue;
+	color: white;
+	outline: none;
+	padding: $l-size;
+	text-align: center;
+}
+.modal__title {
+	margin: 0 $l-size 0 0;
+}
+.modal__body {
+	font-size: 2rem;
 }
