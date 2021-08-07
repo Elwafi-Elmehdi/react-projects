@@ -16,3 +16,8 @@
 	font-weight: 400;
 	margin: 0;
 }
+@media (max-width: $desktop-breakpoint) {
+	.header {
+		margin: 0 0 $s-size 0;
+	}
+}

@@ -16,5 +16,14 @@
 	padding: $s-size;
 	background: $dark-blue;
 	border-bottom: 0.3rem solid darken($purple, $amount: 10%);
-	margin-right: $s-size;
+	// margin-right: $s-size;
+}
+
+@media (max-width: $desktop-breakpoint) {
+	.add-option {
+		flex-direction: column;
+	}
+	.add-option__input {
+		margin: 0 0 $s-size 0;
+	}
 }
