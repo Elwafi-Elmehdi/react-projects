@@ -6,12 +6,16 @@ import "./styles/styles.scss";
 
 const ExpenseDashboardPage = () => <div>this is from my dashboard cmp</div>;
 const AddExpensePage = () => <div>this is from my Add Expense cmp</div>;
+const HelpPage = () => <div>this is from Help page</div>;
+const EditExpensePage = () => <div>this is from Edit Expense cmp</div>;
 
 const routes = (
 	<BrowserRouter>
 		<div>
-			<Route path="/" component={ExpenseDashboardPage} />
+			<Route path="/" exact={true} component={ExpenseDashboardPage} />
 			<Route path="/create" component={AddExpensePage} />
+			<Route path="/edit" component={EditExpensePage} />
+			<Route path="/help" component={HelpPage} />
 		</div>
 	</BrowserRouter>
 );
