@@ -13,16 +13,28 @@ const NotFoundPage = () => (
 		404! <Link to="/">Go Home</Link>
 	</div>
 );
+const Header = () => (
+	<div>
+		<h1>Expensify</h1>
+		<Link to="/">Home</Link>
+		<Link to="/create">Create</Link>
+		<Link to="/edit">Edit</Link>
+		<Link to="/help">Help</Link>
+	</div>
+);
 
 const routes = (
 	<BrowserRouter>
-		<Switch>
-			<Route path="/" exact={true} component={ExpenseDashboardPage} />
-			<Route path="/create" component={AddExpensePage} />
-			<Route path="/edit" component={EditExpensePage} />
-			<Route path="/help" component={HelpPage} />
-			<Route component={NotFoundPage} />
-		</Switch>
+		<div>
+			<Header />
+			<Switch>
+				<Route path="/" exact={true} component={ExpenseDashboardPage} />
+				<Route path="/create" component={AddExpensePage} />
+				<Route path="/edit" component={EditExpensePage} />
+				<Route path="/help" component={HelpPage} />
+				<Route component={NotFoundPage} />
+			</Switch>
+		</div>
 	</BrowserRouter>
 );
 ReactDOM.render(routes, document.getElementById("app"));
