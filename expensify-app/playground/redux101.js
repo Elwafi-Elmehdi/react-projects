@@ -47,5 +47,5 @@ store.dispatch({
 // Lets create a decrement action
 store.dispatch({
 	type: "DECREMENT",
-	decrementBy: 4,
+	decrementBy: 10,
 });
