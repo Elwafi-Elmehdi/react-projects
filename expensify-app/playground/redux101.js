@@ -7,9 +7,17 @@ const initState = {
 
 // Global singleton that stores the state
 const store = createStore((state = initState, action) => {
-	// cheking for the type of the action
-	return state;
+	// cheking for the type of the action is INCREMENT
+	if (action.type === "INCREMENT") {
+		return {
+			count: state.count + 1,
+		};
+	} else {
+		return state;
+	}
 });
+
+console.log(store.getState());
 
 // Actions to be defined are increment, decrement, reset
 
