@@ -12,6 +12,7 @@ const AppRouter = () => (
 		<div>
 			<Header />
 			<Switch>
+				{/* Only cmps passed in routes get props from react router */}
 				<Route path="/" exact={true} component={ExpenseDashboardPage} />
 				<Route path="/create" component={AddExpensePage} />
 				<Route path="/edit/:id" component={EditExpensePage} />
