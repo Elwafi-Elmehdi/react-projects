@@ -7,12 +7,16 @@ const initState = {
 
 // Global singleton that stores the state
 const store = createStore((state = initState, action) => {
+	const incrementBy =
+		typeof action.incrementBy === "number" ? action.incrementBy : 1;
+	const decrementBy =
+		typeof action.decrementBy === "number" ? action.decrementBy : 1;
 	// cheking for the type of the action is INCREMENT
 	switch (action.type) {
 		case "INCREMENT":
-			return { count: state.count + 1 };
+			return { count: state.count + incrementBy };
 		case "DECREMENT":
-			return { count: state.count - 1 };
+			return { count: state.count - decrementBy };
 		case "RESET":
 			return { count: 0 };
 		default:
@@ -23,23 +27,25 @@ const store = createStore((state = initState, action) => {
 // Actions to be defined are increment, decrement, reset (to communicate with the store)
 // store.dispatch declare the action obj to the store
 
+// Every time the state changes sub func is excutaed
+const unsubscribe = store.subscribe(() => {
+	console.log(store.getState());
+});
+
 // Lets create an increment action
 store.dispatch({
-	type: "INCREMENT",
+	type: "INCREMENT", // required
+	incrementBy: 5,
 });
 store.dispatch({
 	type: "INCREMENT",
 });
-console.log(store.getState());
-
-// Lets create a decrement action
-store.dispatch({
-	type: "DECREMENT",
-});
-
 // Lets create a reset action
 store.dispatch({
 	type: "RESET",
 });
-
-console.log(store.getState());
+// Lets create a decrement action
+store.dispatch({
+	type: "DECREMENT",
+	decrementBy: 4,
+});
