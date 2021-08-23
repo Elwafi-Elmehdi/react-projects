@@ -8,12 +8,15 @@ const initState = {
 // Global singleton that stores the state
 const store = createStore((state = initState, action) => {
 	// cheking for the type of the action is INCREMENT
-	if (action.type === "INCREMENT") {
-		return {
-			count: state.count + 1,
-		};
-	} else {
-		return state;
+	switch (action.type) {
+		case "INCREMENT":
+			return { count: state.count + 1 };
+			break;
+		case "DECREMENT":
+			return { count: state.count - 1 };
+		default:
+			return state;
+			break;
 	}
 });
 
@@ -24,7 +27,7 @@ console.log(store.getState());
 // Lets create an action increment
 // store.dispatch declare the action obj to the store
 store.dispatch({
-	type: "INCREMENT",
+	type: "DECREMENT",
 });
 
 console.log(store.getState());
