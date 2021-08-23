@@ -20,15 +20,17 @@ const store = createStore((state = initState, action) => {
 	}
 });
 
-console.log(store.getState());
-
-// Actions to be defined are increment, decrement, reset
+// Actions to be defined are increment, decrement, reset (to communicate with the store)
 // store.dispatch declare the action obj to the store
 
 // Lets create an increment action
 store.dispatch({
 	type: "INCREMENT",
 });
+store.dispatch({
+	type: "INCREMENT",
+});
+console.log(store.getState());
 
 // Lets create a decrement action
 store.dispatch({
