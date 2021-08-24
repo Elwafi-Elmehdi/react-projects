@@ -8,4 +8,4 @@ console.log(`${street} ${city} ${country}`);
 
 // const [, city, country] = address; // skipping street
 
-// onst [, city="Rabat", country] = address; // defaulting city var to Rabat
+// const [, city="Rabat", country] = address; // defaulting city var to Rabat

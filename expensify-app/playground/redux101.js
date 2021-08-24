@@ -5,16 +5,33 @@ const initState = {
 	count: 0,
 };
 
+// Lets create Action generator (function that returnes an action)
+
+// IncrementBy x
+const incrementBy = ({ incrementBy = 1 } = {}) => ({
+	type: "INCREMENT", // required
+	incrementBy,
+});
+
+// DecrementBy x
+const decrementBy = ({ decrementBy = 1 } = {}) => ({
+	type: "DECREMENT",
+	decrementBy,
+});
+
+// Reset Counter
+const reset = () => ({
+	type: "RESET",
+});
+
 // Global singleton that stores the state
 const store = createStore((state = initState, action) => {
-	const incrementBy =
-		typeof action.incrementBy === "number" ? action.incrementBy : 1;
 	const decrementBy =
 		typeof action.decrementBy === "number" ? action.decrementBy : 1;
 	// cheking for the type of the action is INCREMENT
 	switch (action.type) {
 		case "INCREMENT":
-			return { count: state.count + incrementBy };
+			return { count: state.count + action.incrementBy };
 		case "DECREMENT":
 			return { count: state.count - decrementBy };
 		case "RESET":
@@ -33,19 +50,17 @@ const unsubscribe = store.subscribe(() => {
 });
 
 // Lets create an increment action
-store.dispatch({
-	type: "INCREMENT", // required
-	incrementBy: 5,
-});
-store.dispatch({
-	type: "INCREMENT",
-});
+store.dispatch(
+	incrementBy({
+		incrementBy: 5,
+	})
+);
+store.dispatch(incrementBy());
 // Lets create a reset action
-store.dispatch({
-	type: "RESET",
-});
+store.dispatch(reset());
 // Lets create a decrement action
-store.dispatch({
-	type: "DECREMENT",
-	decrementBy: 10,
-});
+store.dispatch(
+	decrementBy({
+		decrementBy: 10,
+	})
+);
