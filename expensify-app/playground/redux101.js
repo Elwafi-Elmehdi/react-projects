@@ -26,14 +26,12 @@ const reset = () => ({
 
 // Global singleton that stores the state
 const store = createStore((state = initState, action) => {
-	const decrementBy =
-		typeof action.decrementBy === "number" ? action.decrementBy : 1;
 	// cheking for the type of the action is INCREMENT
 	switch (action.type) {
 		case "INCREMENT":
 			return { count: state.count + action.incrementBy };
 		case "DECREMENT":
-			return { count: state.count - decrementBy };
+			return { count: state.count - action.decrementBy };
 		case "RESET":
 			return { count: 0 };
 		default:
