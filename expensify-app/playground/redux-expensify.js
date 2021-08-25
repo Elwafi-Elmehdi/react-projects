@@ -60,3 +60,14 @@ const filtersReducer = (state = filtersInitState, action) => {
 			return state;
 	}
 };
+
+// Added store with combined reducers
+
+const store = createStore(
+	combineReducers({
+		expenses: expenseReducer,
+		filters: filtersReducer,
+	})
+);
+
+console.log();
