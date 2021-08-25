@@ -54,6 +54,7 @@ const addExpense = ({
 const expenseInitState = [];
 
 const expenseReducer = (state = expenseInitState, action) => {
+	// Never mutate the state , always return a new state
 	switch (action.type) {
 		case "ADD_EXPENSE":
 			return state.concat(action.expense);
@@ -88,6 +89,7 @@ const store = createStore(
 	})
 );
 
+// Adding a expense to the state
 store.dispatch(addExpense({ title: "Hello from redux" }));
 
 // Every time the state changed the callbackc will be excuted
