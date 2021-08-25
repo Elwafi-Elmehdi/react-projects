@@ -24,8 +24,13 @@ const reset = () => ({
 	type: "RESET",
 });
 
-// Global singleton that stores the state
-const store = createStore((state = initState, action) => {
+// Reducers
+// 1 they are pure functions
+// 2 Never change action or state
+
+// Lets create a count reducer
+
+const countReducer = (state = initState, action) => {
 	// cheking for the type of the action is INCREMENT
 	switch (action.type) {
 		case "INCREMENT":
@@ -37,9 +42,13 @@ const store = createStore((state = initState, action) => {
 		default:
 			return state;
 	}
-});
+};
+
+// Global singleton that stores the state
+const store = createStore(countReducer);
 
 // Actions to be defined are increment, decrement, reset (to communicate with the store)
+
 // store.dispatch declare the action obj to the store
 
 // Every time the state changes sub func is excutaed
