@@ -17,3 +17,32 @@ const initState = {
 		endDate: undefined,
 	},
 };
+
+// Actions for Expensify
+/*
+    ADD_EXPENSE
+    REMOVE_EXPENSE
+    SET_TITLE
+    SET_AMOUNT
+    EDIT_EXPENSE
+    SET_TEXT_FILTER
+    SORT_BY_DATE
+    SORT_BY_AMOUNT
+    SET_START_DATE
+    SET_END_DATE
+*/
+
+// Reducers
+
+// Expense Reducer
+
+const expenseInitState = [];
+
+const expenseReducer = (state = expenseInitState, action) => {
+	switch (action.type) {
+		default:
+			return state;
+	}
+};
+
+// 
