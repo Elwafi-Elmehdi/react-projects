@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from "redux";
+import uuid from "uuid";
 
 const initState = {
 	expenses: [
@@ -21,13 +22,20 @@ const initState = {
 // Actions for Expensify
 
 // ADD_EXPENSE
-const addExpense = (
-    {
-        
-    }
-    = {}
-) => ({
+const addExpense = ({
+	title = "no title",
+	note = "",
+	amount = 0,
+	createdAt = 0,
+} = {}) => ({
 	type: "ADD_EXPENSE",
+	expense: {
+		id: uuid(),
+		title,
+		note,
+		amount,
+		createdAt,
+	},
 });
 // REMOVE_EXPENSE
 // SET_TITLE
