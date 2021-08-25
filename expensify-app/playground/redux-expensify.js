@@ -1,6 +1,8 @@
 import { createStore, combineReducers } from "redux";
 import { v4 as uuidv4 } from "uuid";
 
+// Exemple of the initial State of the whole expensify app
+
 const initState = {
 	expenses: [
 		{
@@ -22,6 +24,7 @@ const initState = {
 // Actions for Expensify
 
 // ADD_EXPENSE
+
 const addExpense = ({
 	title = "no title",
 	note = "",
@@ -57,7 +60,7 @@ const expenseReducer = (state = expenseInitState, action) => {
 	// Never mutate the state , always return a new state
 	switch (action.type) {
 		case "ADD_EXPENSE":
-			return state.concat(action.expense);
+			return [...state, action.expense];
 		default:
 			return state;
 	}
