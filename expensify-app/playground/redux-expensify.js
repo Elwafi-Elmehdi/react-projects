@@ -47,7 +47,12 @@ const expenseReducer = (state = expenseInitState, action) => {
 
 // Filters Reducer
 
-const filtersInitState = initState.filters;
+const filtersInitState = {
+	text: "",
+	sortBy: "date", // date,amount
+	startDate: undefined,
+	endDate: undefined,
+};
 
 const filtersReducer = (state = filtersInitState, action) => {
 	switch (action.type) {
