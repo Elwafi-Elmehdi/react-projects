@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 const initState = {
 	expenses: [
@@ -30,7 +30,7 @@ const addExpense = ({
 } = {}) => ({
 	type: "ADD_EXPENSE",
 	expense: {
-		id: uuid(),
+		id: uuidv4(),
 		title,
 		note,
 		amount,
@@ -55,6 +55,8 @@ const expenseInitState = [];
 
 const expenseReducer = (state = expenseInitState, action) => {
 	switch (action.type) {
+		case "ADD_EXPENSE":
+			return state.concat(action.expense);
 		default:
 			return state;
 	}
@@ -85,5 +87,12 @@ const store = createStore(
 		filters: filtersReducer,
 	})
 );
+
+store.dispatch(addExpense({ title: "Hello from redux" }));
+
+// Every time the state changed the callbackc will be excuted
+store.subscribe(() => {
+	console.log(store.getState());
+});
 
 console.log(store.getState());
