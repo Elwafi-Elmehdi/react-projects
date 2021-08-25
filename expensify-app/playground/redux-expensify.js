@@ -41,6 +41,10 @@ const addExpense = ({
 	},
 });
 // REMOVE_EXPENSE
+const removeExpense = (id) => ({
+	type: "REMOVE_EXPENSE",
+	id,
+});
 // SET_TITLE
 // SET_AMOUNT
 // EDIT_EXPENSE
@@ -93,7 +97,8 @@ const store = createStore(
 );
 
 // Adding a expense to the state
-store.dispatch(addExpense({ title: "Hello from redux" }));
+const expenseOne = store.dispatch(addExpense({ title: "Hello from redux" }));
+const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
 
 // Every time the state changed the callbackc will be excuted
 store.subscribe(() => {
