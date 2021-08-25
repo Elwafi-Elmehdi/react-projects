@@ -19,18 +19,25 @@ const initState = {
 };
 
 // Actions for Expensify
-/*
-    ADD_EXPENSE
-    REMOVE_EXPENSE
-    SET_TITLE
-    SET_AMOUNT
-    EDIT_EXPENSE
-    SET_TEXT_FILTER
-    SORT_BY_DATE
-    SORT_BY_AMOUNT
-    SET_START_DATE
-    SET_END_DATE
-*/
+
+// ADD_EXPENSE
+const addExpense = (
+    {
+        
+    }
+    = {}
+) => ({
+	type: "ADD_EXPENSE",
+});
+// REMOVE_EXPENSE
+// SET_TITLE
+// SET_AMOUNT
+// EDIT_EXPENSE
+// SET_TEXT_FILTER
+// SORT_BY_DATE
+// SORT_BY_AMOUNT
+// SET_START_DATE
+// SET_END_DATE
 
 // Reducers
 
@@ -49,7 +56,7 @@ const expenseReducer = (state = expenseInitState, action) => {
 
 const filtersInitState = {
 	text: "",
-	sortBy: "date", // date,amount
+	sortBy: "date",
 	startDate: undefined,
 	endDate: undefined,
 };
@@ -61,7 +68,8 @@ const filtersReducer = (state = filtersInitState, action) => {
 	}
 };
 
-// Added store with combined reducers
+// Lets create a  store with combined reducers
+// because its easy to manage a part of a state with a reducer than using a single reducer
 
 const store = createStore(
 	combineReducers({
@@ -70,4 +78,4 @@ const store = createStore(
 	})
 );
 
-console.log();
+console.log(store.getState());
