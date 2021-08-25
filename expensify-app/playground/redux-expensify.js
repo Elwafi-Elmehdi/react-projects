@@ -101,6 +101,9 @@ const store = createStore(
 // Adding a expense to the state
 const expenseOne = store.dispatch(addExpense({ title: "Hello from redux" }));
 const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
+console.log(store.getState());
+
+store.dispatch(removeExpense(expenseTwo.expense.id));
 
 // Every time the state changed the callbackc will be excuted
 store.subscribe(() => {
