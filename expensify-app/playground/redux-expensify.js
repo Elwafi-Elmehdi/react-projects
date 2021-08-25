@@ -45,4 +45,13 @@ const expenseReducer = (state = expenseInitState, action) => {
 	}
 };
 
-// 
+// Filters Reducer
+
+const filtersInitState = initState.filters;
+
+const filtersReducer = (state = filtersInitState, action) => {
+	switch (action.type) {
+		default:
+			return state;
+	}
+};
