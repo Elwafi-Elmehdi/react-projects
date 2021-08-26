@@ -54,6 +54,10 @@ const editExpense = (id, updates) => ({
 // SET_TITLE
 // SET_AMOUNT
 // SET_TEXT_FILTER
+const addTextFilter = (text = "") => ({
+	type: "SET_TEXT_FILTER",
+	text,
+});
 // SORT_BY_DATE
 // SORT_BY_AMOUNT
 // SET_START_DATE
@@ -127,3 +131,6 @@ const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
 store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
 // Lets edit an expense
 store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
+// Lets Add Text filter
+store.dispatch(addTextFilter("boissons"));
+store.dispatch(addTextFilter());
