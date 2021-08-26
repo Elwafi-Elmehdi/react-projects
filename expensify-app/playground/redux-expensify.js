@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import { v4 as uuidv4 } from "uuid";
 
-// Exemple of the initial State of the whole expensify app
+// Exemple of  the expensify app initial state
 
 const initState = {
 	expenses: [
@@ -110,3 +110,13 @@ const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
 
 // Lets remove an expense
 store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
+
+const user = {
+	name: "Mehdi",
+	age: 21,
+};
+console.log({
+	...user,
+	location: "Marrakech",
+	age: 24, // overriding props in user obj
+});
