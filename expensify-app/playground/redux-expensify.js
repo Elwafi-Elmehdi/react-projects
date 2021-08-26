@@ -45,10 +45,14 @@ const removeExpense = ({ id } = {}) => ({
 	type: "REMOVE_EXPENSE",
 	id,
 });
-
+// EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+	type: "EDIT_EXPENSE",
+	id,
+	updates,
+});
 // SET_TITLE
 // SET_AMOUNT
-// EDIT_EXPENSE
 // SET_TEXT_FILTER
 // SORT_BY_DATE
 // SORT_BY_AMOUNT
@@ -110,7 +114,9 @@ const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
 
 // Lets remove an expense
 store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
+// Lets edit an expense
 
+store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
 const user = {
 	name: "Mehdi",
 	age: 21,
@@ -119,4 +125,5 @@ console.log({
 	...user,
 	location: "Marrakech",
 	age: 24, // overriding props in user obj
+	name: "Reda", // overriding props in user obj
 });
