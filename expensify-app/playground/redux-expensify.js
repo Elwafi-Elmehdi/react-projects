@@ -59,7 +59,13 @@ const addTextFilter = (text = "") => ({
 	text,
 });
 // SORT_BY_DATE
+const sortByDate = () => ({
+	type: "SORT_BY_DATE",
+});
 // SORT_BY_AMOUNT
+const sortByAmount = () => ({
+	type: "SORT_BY_AMOUNT",
+});
 // SET_START_DATE
 // SET_END_DATE
 
@@ -139,3 +145,8 @@ store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
 // Lets Add Text filter
 store.dispatch(addTextFilter("boissons"));
 store.dispatch(addTextFilter());
+
+// Lets sort by date
+store.dispatch(sortByDate());
+// Lets sort by amount
+store.dispatch(sortByAmount());
