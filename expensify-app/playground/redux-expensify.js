@@ -51,8 +51,6 @@ const editExpense = (id, updates) => ({
 	id,
 	updates,
 });
-// SET_TITLE
-// SET_AMOUNT
 // SET_TEXT_FILTER
 const addTextFilter = (text = "") => ({
 	type: "SET_TEXT_FILTER",
@@ -67,7 +65,15 @@ const sortByAmount = () => ({
 	type: "SORT_BY_AMOUNT",
 });
 // SET_START_DATE
+const setStartDate = (date = undefined) => ({
+	type: "SET_START_DATE",
+	date,
+});
 // SET_END_DATE
+const setEndDate = (date = undefined) => ({
+	type: "SET_END_DATE",
+	date,
+});
 
 // Reducers
 
@@ -115,7 +121,7 @@ const filtersReducer = (state = filtersInitState, action) => {
 				text: action.text,
 			};
 		case "SORT_BY_DATE":
-			return state;
+			return { ...state, sortBy: "date" };
 		case "SORT_BY_AMOUNT":
 			return { ...state, sortBy: "amount" };
 
@@ -150,8 +156,11 @@ store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
 // Lets Add Text filter
 store.dispatch(addTextFilter("boissons"));
 store.dispatch(addTextFilter());
-
-// Lets sort by date
-store.dispatch(sortByDate());
 // Lets sort by amount
 store.dispatch(sortByAmount());
+// Lets sort by date
+store.dispatch(sortByDate());
+
+// Lets set start date
+store.dispatch(setStartDate(4));
+store.dispatch(setEndDate(7));
