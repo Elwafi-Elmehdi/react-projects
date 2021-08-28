@@ -168,10 +168,10 @@ const unsubscribe = store.subscribe(() => {
 
 // Adding a expense to the state
 const expenseOne = store.dispatch(
-	addExpense({ title: "Hello", createdAt: 400 })
+	addExpense({ title: "Hello ps", createdAt: 400 })
 );
 const expenseTwo = store.dispatch(
-	addExpense({ title: "9hiwa", amount: 120, createdAt: 70 })
+	addExpense({ title: "9hiwa ps", amount: 120, createdAt: 70 })
 );
 const expenseThree = store.dispatch(
 	addExpense({ title: "Unix", amount: 754, createdAt: -200 })
@@ -182,7 +182,7 @@ const expenseThree = store.dispatch(
 // // Lets edit an expense
 // store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
 // // Lets Add Text filter
-// store.dispatch(addTextFilter("boissons"));
+store.dispatch(addTextFilter("PS"));
 // store.dispatch(addTextFilter());
 // // Lets sort by amount
 // store.dispatch(sortByAmount());
@@ -190,7 +190,7 @@ const expenseThree = store.dispatch(
 // store.dispatch(sortByDate());
 
 // // Lets set start date
-store.dispatch(setStartDate(4000));
+// store.dispatch(setStartDate(4000));
 // // Lets set end date
 // store.dispatch(setEndDate(7));
 // store.dispatch(setEndDate());
