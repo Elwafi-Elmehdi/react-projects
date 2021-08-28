@@ -143,30 +143,46 @@ const store = createStore(
 		filters: filtersReducer,
 	})
 );
+// Filter function
+const showVisibleExpenses = (
+	expenses,
+	{ text, sortBy, startDate, endDate }
+) => {
+	return expenses.filter((expense) => {
+		const textMatch = true;
+		const startDateMatch =
+			typeof startDate !== "number" || expense.createdAt >= startDate;
+		const endDateMatch =
+			typeof endDate !== "number" || expense.createdAt <= endDate;
+
+		return textMatch && startDateMatch && endDateMatch;
+	});
+};
 
 // Every time the state changed the callbackc will be excuted
 const unsubscribe = store.subscribe(() => {
-	console.log(store.getState());
+	const state = store.getState();
+	console.log(showVisibleExpenses(state.expenses, state.filters));
 });
 
 // Adding a expense to the state
 const expenseOne = store.dispatch(addExpense({ title: "Hello from redux" }));
 const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
 
-// Lets remove an expense
-store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
-// Lets edit an expense
-store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
-// Lets Add Text filter
-store.dispatch(addTextFilter("boissons"));
-store.dispatch(addTextFilter());
-// Lets sort by amount
-store.dispatch(sortByAmount());
-// Lets sort by date
-store.dispatch(sortByDate());
+// // Lets remove an expense
+// store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
+// // Lets edit an expense
+// store.dispatch(editExpense(expenseOne.expense.id, { amount: 4560 }));
+// // Lets Add Text filter
+// store.dispatch(addTextFilter("boissons"));
+// store.dispatch(addTextFilter());
+// // Lets sort by amount
+// store.dispatch(sortByAmount());
+// // Lets sort by date
+// store.dispatch(sortByDate());
 
-// Lets set start date
-store.dispatch(setStartDate(4));
-// Lets set end date
-store.dispatch(setEndDate(7));
-store.dispatch(setEndDate());
+// // Lets set start date
+// store.dispatch(setStartDate(4));
+// // Lets set end date
+// store.dispatch(setEndDate(7));
+// store.dispatch(setEndDate());
