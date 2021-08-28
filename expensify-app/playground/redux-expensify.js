@@ -149,7 +149,8 @@ const showVisibleExpenses = (
 	{ text, sortBy, startDate, endDate }
 ) => {
 	return expenses.filter((expense) => {
-		const textMatch = true;
+		const title = expense.title.toLowerCase();
+		const textMatch = title.includes(text.toLowerCase());
 		const startDateMatch =
 			typeof startDate !== "number" || expense.createdAt >= startDate;
 		const endDateMatch =
@@ -166,8 +167,15 @@ const unsubscribe = store.subscribe(() => {
 });
 
 // Adding a expense to the state
-const expenseOne = store.dispatch(addExpense({ title: "Hello from redux" }));
-const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
+const expenseOne = store.dispatch(
+	addExpense({ title: "Hello", createdAt: 400 })
+);
+const expenseTwo = store.dispatch(
+	addExpense({ title: "9hiwa", amount: 120, createdAt: 70 })
+);
+const expenseThree = store.dispatch(
+	addExpense({ title: "Unix", amount: 754, createdAt: -200 })
+);
 
 // // Lets remove an expense
 // store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
@@ -182,7 +190,7 @@ const expenseTwo = store.dispatch(addExpense({ title: "9hiwa", amount: 12 }));
 // store.dispatch(sortByDate());
 
 // // Lets set start date
-// store.dispatch(setStartDate(4));
+store.dispatch(setStartDate(4000));
 // // Lets set end date
 // store.dispatch(setEndDate(7));
 // store.dispatch(setEndDate());
