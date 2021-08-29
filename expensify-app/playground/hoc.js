@@ -14,13 +14,34 @@ const Info = (props) => (
 	</div>
 );
 
-const AdminInfo = (props) => {
+// Admin Warning HOC
+
+const withAdminWarning = (WrappedComponent) => {
 	return (props) => (
 		<div>
 			{props.isAdmin && <p>this from an admin</p>}
-			<Info />
+			<WrappedComponent {...props} />
 		</div>
 	);
 };
 
-ReactDOM.render(<Info info="Test" />, document.getElementById("app"));
+const Auth = (props) => <h1>Hey {props.name}</h1>;
+// Auth Warning HOC
+
+const withAuth = (WrappedComponent) => {
+	return (props) => (
+		<div>
+			{!props.isAuth && <p>Please authenticate.</p>}
+			{props.isAuth && <Auth {...props} />}
+		</div>
+	);
+};
+
+const AdminInfo = withAdminWarning(Info);
+
+const AuthInfo = withAuth(Info);
+
+ReactDOM.render(
+	<AuthInfo isAuth={false} name="mehdi" />,
+	document.getElementById("app")
+);
