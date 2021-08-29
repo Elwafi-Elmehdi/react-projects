@@ -17,6 +17,8 @@ store.dispatch(addExpense({ title: "Rent bill", amount: 2500 }));
 store.dispatch(addExpense({ title: "Car bill", amount: 3000 }));
 store.dispatch(addTextFilter("car"));
 
+setTimeout(() => store.dispatch(addTextFilter("rent")), 3000);
+
 const state = store.getState();
 console.log(showExpenses(state.expenses, state.filters));
 

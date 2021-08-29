@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 const ExpensesList = (props) => (
 	<div>
 		<p>Hello from Expenses list</p>
+		{props.expenses.length}
+		{props.filters.text}
 	</div>
 );
 
