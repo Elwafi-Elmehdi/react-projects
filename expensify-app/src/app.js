@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppRouter from "./routers/AppRouter";
+import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 import showExpenses from "./selectors/showExpenses";
+
+import AppRouter from "./routers/AppRouter";
 import { addExpense } from "./actions/expenses";
 import { addTextFilter } from "./actions/filters";
 
@@ -18,4 +20,10 @@ store.dispatch(addTextFilter("car"));
 const state = store.getState();
 console.log(showExpenses(state.expenses, state.filters));
 
-ReactDOM.render(<AppRouter />, document.getElementById("app"));
+const jsx = (
+	<Provider store={store}>
+		<AppRouter />
+	</Provider>
+);
+
+ReactDOM.render(jsx, document.getElementById("app"));
