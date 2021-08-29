@@ -26,13 +26,14 @@ const withAdminWarning = (WrappedComponent) => {
 };
 
 const Auth = (props) => <h1>Hey {props.name}</h1>;
+
 // Auth Warning HOC
 
 const withAuth = (WrappedComponent) => {
 	return (props) => (
 		<div>
 			{!props.isAuth && <p>Please authenticate.</p>}
-			{props.isAuth && <Auth {...props} />}
+			{props.isAuth && <WrappedComponent {...props} />}
 		</div>
 	);
 };
