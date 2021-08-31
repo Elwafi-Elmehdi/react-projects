@@ -13,12 +13,23 @@ export default class ExpenseForm extends React.Component {
 		note: "",
 		createdAt: moment(),
 		calenderFocused: false,
+		error: "",
+	};
+	onSubmit = (e) => {
+		e.preventDefault();
+		if (!this.state.amount || this.state.description) {
+			this.setState(() => ({ error: "Please entre a valid expense" }));
+		} else {
+			this.setState(() => ({ error: "" }));
+		}
 	};
 	onFocusChange = ({ focused }) => {
 		this.setState(() => ({ calenderFocused: focused }));
 	};
 	onDateChange = (createdAt) => {
-		this.setState(() => ({ createdAt }));
+		if (createdAt) {
+			this.setState(() => ({ createdAt }));
+		}
 	};
 	onChangeDescription = (e) => {
 		const description = e.target.value;
@@ -34,14 +45,15 @@ export default class ExpenseForm extends React.Component {
 	};
 	onChangeAmount = (e) => {
 		const amount = e.target.value;
-		if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+		if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
 			this.setState(() => ({ amount }));
 		}
 	};
 	render() {
 		return (
 			<div>
-				<form>
+				{this.state.error && <p>{this.state.error}</p>}
+				<form onSubmit={this.onSubmit}>
 					<input
 						type="text"
 						value={this.state.description}
@@ -61,6 +73,7 @@ export default class ExpenseForm extends React.Component {
 						focused={this.state.calenderFocused}
 						onFocusChange={this.onFocusChange}
 						numberOfMonths={1}
+						isOutsideRange={() => false}
 					/>
 					<textarea
 						placeholder="Note"
