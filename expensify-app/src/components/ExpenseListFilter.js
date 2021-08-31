@@ -16,7 +16,7 @@ const ExpenseListFilter = (props) => (
 			onChange={(e) => {
 				if (e.target.value === "date") {
 					props.dispatch(sortByDate());
-				} else {
+				} else if (e.target.value === "amout") {
 					props.dispatch(sortByAmount());
 				}
 			}}
