@@ -12,6 +12,12 @@ export default class ExpenseForm extends React.Component {
 			description,
 		}));
 	};
+	onChangeNote = (e) => {
+		const note = e.target.value;
+		this.setState((state) => ({
+			note,
+		}));
+	};
 	render() {
 		return (
 			<div>
@@ -31,7 +37,10 @@ export default class ExpenseForm extends React.Component {
 					<textarea
 						placeholder="Note"
 						value={this.state.note}
+						onChange={this.onChangeNote}
 					></textarea>
+
+					<button>Add Expense</button>
 				</form>
 			</div>
 		);
