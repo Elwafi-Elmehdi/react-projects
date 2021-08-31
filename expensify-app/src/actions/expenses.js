@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 export const addExpense = ({
 	title = "no title",
 	note = "",
-	amount = 0,
+	amount = 0.0,
 	createdAt = 0,
 } = {}) => ({
 	type: "ADD_EXPENSE",

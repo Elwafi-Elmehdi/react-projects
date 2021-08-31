@@ -17,10 +17,16 @@ export default class ExpenseForm extends React.Component {
 	};
 	onSubmit = (e) => {
 		e.preventDefault();
-		if (!this.state.amount || this.state.description) {
+		if (!this.state.amount || !this.state.description) {
 			this.setState(() => ({ error: "Please entre a valid expense" }));
 		} else {
 			this.setState(() => ({ error: "" }));
+			this.props.onSubmit({
+				title: this.state.description,
+				note: this.state.note,
+				amount: parseFloat(this.state.amount),
+				createdAt: this.state.createdAt.valueOf(),
+			});
 		}
 	};
 	onFocusChange = ({ focused }) => {
