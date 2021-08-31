@@ -2,14 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import { removeExpense } from "../actions/expenses";
 
-const ExpensesListItem = (props) => (
+const ExpensesListItem = ({ dispatch, expense }) => (
 	<div>
-		<h3>{props.expense.title}</h3>
-		<h3>{props.expense.createdAt}</h3>
-		<h3>{props.expense.amount}</h3>
+		<h3>{expense.title}</h3>
+		<h3>{expense.createdAt}</h3>
+		<h3>{expense.amount}</h3>
 		<button
-			onSubmit={(e) => {
-				props.dispatch(removeExpense(props.expense.id));
+			onClick={() => {
+				dispatch(removeExpense({ id: expense.id }));
 			}}
 		>
 			Remove
@@ -17,6 +17,4 @@ const ExpensesListItem = (props) => (
 	</div>
 );
 
-const mapStateToProps = (state) => ({});
-
-export default connect(mapStateToProps)(ExpensesListItem);
+export default connect()(ExpensesListItem);
