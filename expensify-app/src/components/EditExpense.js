@@ -1,5 +1,6 @@
 import React from "react";
 import ExpenseForm from "./ExpenseForm";
+import { connect } from "react-redux";
 const EditExpensePage = (props) => {
 	return (
 		<div>
@@ -7,4 +8,4 @@ const EditExpensePage = (props) => {
 		</div>
 	);
 };
-export default EditExpensePage;
+export default connect()(EditExpensePage);
