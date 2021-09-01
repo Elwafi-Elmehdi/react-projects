@@ -8,7 +8,9 @@ const EditExpensePage = (props) => {
 				onSubmit={(expense) => {
 					console.log(props);
 				}}
-				expense={0}
+				expense={props.expenses.find(
+					(expense) => expense.id === props.match.params.id
+				)}
 			/>
 		</div>
 	);
