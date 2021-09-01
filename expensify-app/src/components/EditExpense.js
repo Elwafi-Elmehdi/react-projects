@@ -1,5 +1,10 @@
 import React from "react";
+import ExpenseForm from "./ExpenseForm";
 const EditExpensePage = (props) => {
-	return <div>Editing the expense with the id {props.match.params.id}</div>;
+	return (
+		<div>
+			<ExpenseForm />
+		</div>
+	);
 };
 export default EditExpensePage;
