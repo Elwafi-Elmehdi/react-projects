@@ -6,11 +6,12 @@ const EditExpensePage = (props) => {
 		<div>
 			<ExpenseForm
 				onSubmit={(expense) => {
-					console.log(expense);
+					console.log(props);
 				}}
-				expense={}
+				expense={0}
 			/>
 		</div>
 	);
 };
-export default connect()(EditExpensePage);
+const mapStateToProps = (state) => ({ expenses: state.expenses });
+export default connect(mapStateToProps)(EditExpensePage);
