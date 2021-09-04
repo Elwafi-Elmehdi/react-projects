@@ -23,7 +23,15 @@ test("Should set up edit expense action object", () => {
 // Test Case For Default Values for Add Expense action
 test("Should set up default values for add expense", () => {
 	const action = addExpense();
-    expect(action).toEqual({
-        
-    })
+	const expense = {
+		id: expect.any(String),
+		title: "no title",
+		note: "",
+		amount: 0.0,
+		createdAt: 0,
+	};
+	expect(action).toEqual({
+		type: "ADD_EXPENSE",
+		expense,
+	});
 });
