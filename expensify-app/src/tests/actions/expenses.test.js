@@ -19,3 +19,11 @@ test("Should set up edit expense action object", () => {
 		updates: { amount: 1000 },
 	});
 });
+
+// Test Case For Default Values for Add Expense action
+test("Should set up default values for add expense", () => {
+	const action = addExpense();
+    expect(action).toEqual({
+        
+    })
+});
