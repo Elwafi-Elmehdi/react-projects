@@ -15,7 +15,7 @@ class ExpenseListFilter extends React.Component {
 			<div>
 				<input
 					type="text"
-					value={props.filters.text}
+					value={this.props.filters.text}
 					onChange={(e) => {
 						this.props.dispatch(addTextFilter(e.target.value));
 					}}
@@ -32,18 +32,20 @@ class ExpenseListFilter extends React.Component {
 				>
 					<option value="date">Date</option>
 					<option value="amount">Amount</option>
-					<DateRangePicker
-						endDate={this.state.endDate}
-						startDate={this.state.startDate}
-						focusedInput={this.state.focusedInput}
-						onDatesChange={({ startDate, endDate }) =>
-							this.setState({ startDate, endDate })
-						}
-						onFocusChange={(focusedInput) =>
-							this.setState({ focusedInput })
-						}
-					/>
 				</select>
+				<DateRangePicker
+					endDate={this.state.endDate}
+					startDate={this.state.startDate}
+					focusedInput={this.state.focusedInput}
+					onDatesChange={({ startDate, endDate }) =>
+						this.setState({ startDate, endDate })
+					}
+					onFocusChange={(focusedInput) =>
+						this.setState({ focusedInput })
+					}
+					numberOfMonths={1}
+					isDayBlocked={() => false}
+				/>
 			</div>
 		);
 	}
