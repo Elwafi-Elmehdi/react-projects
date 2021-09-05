@@ -22,3 +22,11 @@ test("Should set end date filter", () => {
 		date: moment(0),
 	});
 });
+
+test("Should set a text filter ", () => {
+	const action = addTextFilter("Bill");
+	expect(action).toEqual({
+		type: "SET_TEXT_FILTER",
+		text: "Bill",
+	});
+});
