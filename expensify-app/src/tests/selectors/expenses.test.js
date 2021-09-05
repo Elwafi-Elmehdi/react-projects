@@ -32,20 +32,5 @@ test("Shoud filter by text value", () => {
 		endDate: 0,
 	};
 	const action = selectExpenses(expenses, filters);
-	expect(action).toEqual([
-		{
-			id: 3,
-			amount: 700,
-			title: "Real-state taxes",
-			note: "",
-			createdAt: 45,
-		},
-		{
-			id: 2,
-			title: "Car Payment",
-			amount: 3000,
-			note: "",
-			createdAt: -7854,
-		},
-	]);
+	expect(action).toEqual([expenses[2], expenses[1]]);
 });
