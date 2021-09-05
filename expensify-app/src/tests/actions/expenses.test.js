@@ -1,4 +1,5 @@
 import { addExpense, editExpense, removeExpense } from "../../actions/expenses";
+import moment from "moment";
 
 // Test Case For Remove Expense Action
 test("Should set up remove expense action object", () => {
@@ -38,10 +39,20 @@ test("Should set up default values for add expense", () => {
 
 test("Should add expense", () => {
 	const expense = {
-		id: expect.any(String),
 		title: "Hello Jest",
 		note: "Test Test",
 		amount: 1000.0,
 		createdAt: moment("2010-10-20"),
 	};
+	const action = addExpense(expense);
+	expect(action).toEqual({
+		type: "ADD_EXPENSE",
+		expense: {
+			id: expect.any(String),
+			title: "Hello Jest",
+			note: "Test Test",
+			amount: 1000.0,
+			createdAt: moment("2010-10-20"),
+		},
+	});
 });
