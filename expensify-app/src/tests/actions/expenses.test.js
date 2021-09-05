@@ -35,3 +35,13 @@ test("Should set up default values for add expense", () => {
 		expense,
 	});
 });
+
+test("Should add expense", () => {
+	const expense = {
+		id: expect.any(String),
+		title: "Hello Jest",
+		note: "Test Test",
+		amount: 1000.0,
+		createdAt: moment("2010-10-20"),
+	};
+});
