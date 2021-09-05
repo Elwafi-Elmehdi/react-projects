@@ -35,11 +35,27 @@ test("Should set a text filter ", () => {
 	});
 });
 
-test("Should set a sortBy to amount", () => {
+// Test Case : TEXT FILTER DEFAULT
+test("Should set a text filter ", () => {
+	const action = addTextFilter();
+	expect(action).toEqual({
+		type: "SET_TEXT_FILTER",
+		text: "",
+	});
+});
+
+// Test Case : SORT BY AMOUNT
+test("Should set  sortBy to amount", () => {
 	const action = sortByAmount();
 	expect(action).toEqual({
 		type: "SORT_BY_AMOUNT",
 	});
 });
 
-
+// Test Case : SORT BY DATE
+test("Should set sortBy to date", () => {
+	const action = sortByDate();
+	expect(action).toEqual({
+		type: "SORT_BY_DATE",
+	});
+});
