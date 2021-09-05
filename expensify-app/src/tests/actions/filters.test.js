@@ -7,6 +7,8 @@ import {
 	sortByDate,
 } from "../../actions/filters";
 
+// Test Case : START DATE FILTER
+
 test("Should set start date filter", () => {
 	const action = setStartDate(moment(0));
 	expect(action).toEqual({
@@ -14,6 +16,7 @@ test("Should set start date filter", () => {
 		date: moment(0),
 	});
 });
+// Test Case : END DATE FILTER
 
 test("Should set end date filter", () => {
 	const action = setEndDate(moment(0));
@@ -23,6 +26,7 @@ test("Should set end date filter", () => {
 	});
 });
 
+// Test Case : TEXT FILTER
 test("Should set a text filter ", () => {
 	const action = addTextFilter("Bill");
 	expect(action).toEqual({
@@ -30,3 +34,12 @@ test("Should set a text filter ", () => {
 		text: "Bill",
 	});
 });
+
+test("Should set a sortBy to amount", () => {
+	const action = sortByAmount();
+	expect(action).toEqual({
+		type: "SORT_BY_AMOUNT",
+	});
+});
+
+
