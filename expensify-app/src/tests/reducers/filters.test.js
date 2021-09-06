@@ -32,3 +32,10 @@ test("Should set text filter", () => {
 	const state = filersReducer(undefined, action);
 	expect(state.text).toBe("bill");
 });
+
+// Test Case : set Start date filter
+test("Should set start date filter", () => {
+	const action = { type: "SET_START_DATE", date: moment().startOf("month") };
+	const state = filersReducer(undefined, action);
+	expect(state.startDate).toEqual(moment().startOf("month"));
+});
