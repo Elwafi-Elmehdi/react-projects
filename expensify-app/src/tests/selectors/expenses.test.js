@@ -50,8 +50,7 @@ test("Should filter by start date", () => {
 	expect(result).toEqual([expenses[2], expenses[0]]);
 });
 
-// Test Case : Filter by text
-
+// Test Case : Filter by endDate
 test("Should filter by end date", () => {
 	const filters = {
 		text: "",
@@ -61,4 +60,15 @@ test("Should filter by end date", () => {
 	};
 	const result = showExpenses(expenses, filters);
 	expect(result).toEqual([expenses[0], expenses[1]]);
+});
+// Test Case : filter by date
+test("Should filter by start date", () => {
+	const filters = {
+		text: "",
+		sortBy: "date",
+		startDate: 0,
+		endDate: 0,
+	};
+	const result = showExpenses(expenses, filters);
+	expect(result).toEqual([expenses[2], expenses[0], expenses[1]]);
 });
