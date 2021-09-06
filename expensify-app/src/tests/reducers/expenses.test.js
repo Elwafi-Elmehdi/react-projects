@@ -49,3 +49,17 @@ test("Should edit an expense with id", () => {
 	const state = expenseReducer(expenses, action);
 	expect(state[1].amount).toBe(amount);
 });
+
+// Test Case : Edit Expense with no id
+test("Should edit an expense with id", () => {
+	const amount = 4000;
+	const action = {
+		type: "EDIT_EXPENSE",
+		id: -4,
+		updates: {
+			amount,
+		},
+	};
+	const state = expenseReducer(expenses, action);
+	expect(state).toEqual(expenses);
+});
