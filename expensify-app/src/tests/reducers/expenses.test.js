@@ -5,6 +5,12 @@ const expenses = [
 	{ id: 78, title: "Hehi 1" },
 	{ id: 77, title: "Hehi 8" },
 ];
+// Test Case : Init state expenses = []
+test("Should Init Expenses array [] ", () => {
+	const action = { type: "@@INIT" };
+	const state = expenseReducer(undefined, action);
+	expect(state).toEqual([]);
+});
 
 // Test Case : Remove expense with id
 test("Should remove an expense by id", () => {
@@ -20,7 +26,7 @@ test("Should remove non exsiting expense", () => {
 	expect(state).toEqual(expenses);
 });
 
-// Test Case : Add Expense default
+// Test Case : Add Expense
 test("Should add an expense default ", () => {
 	const expense = {
 		title: "Mehdi",
