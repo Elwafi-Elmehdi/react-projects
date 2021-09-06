@@ -25,3 +25,10 @@ test("Should set sortBy to date", () => {
 	const state = filersReducer(initState, action);
 	expect(state.sortBy).toBe("date");
 });
+
+// Test Case : Set text filter
+test("Should set text filter", () => {
+	const action = { type: "SET_TEXT_FILTER", text: "bill" };
+	const state = filersReducer(undefined, action);
+	expect(state.text).toBe("bill");
+});
