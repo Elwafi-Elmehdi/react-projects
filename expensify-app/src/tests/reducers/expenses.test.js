@@ -1,5 +1,5 @@
 import expenseReducer from "../../reducers/expenses";
-import moment from "moment";
+import moment, { updateLocale } from "moment";
 
 const expenses = [
 	{ id: 78, title: "Hehi 1" },
@@ -34,4 +34,18 @@ test("Should add an expense default ", () => {
 	const action = { type: "ADD_EXPENSE", expense };
 	const state = expenseReducer(expenses, action);
 	expect(state).toEqual([...expenses, expense]);
+});
+
+// Test Case : Edit Expense
+test("Should edit an expense with id", () => {
+	const amount = 4000;
+	const action = {
+		type: "EDIT_EXPENSE",
+		id: expenses[1].id,
+		updates: {
+			amount,
+		},
+	};
+	const state = expenseReducer(expenses, action);
+	expect(state[1].amount).toBe(amount);
 });
