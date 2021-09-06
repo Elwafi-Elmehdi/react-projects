@@ -36,5 +36,10 @@ test("Shoud filter by text value", () => {
 });
 
 test("Should filter by start date", () => {
-	
+	const filters = {
+		text: "",
+		sortBy: "date",
+		startDate: 0,
+		endDate: 0,
+	};
 });
