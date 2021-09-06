@@ -34,3 +34,7 @@ test("Shoud filter by text value", () => {
 	const action = selectExpenses(expenses, filters);
 	expect(action).toEqual([expenses[2], expenses[1]]);
 });
+
+test("Should filter by start date", () => {
+	
+});
