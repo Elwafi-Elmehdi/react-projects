@@ -39,3 +39,10 @@ test("Should set start date filter", () => {
 	const state = filersReducer(undefined, action);
 	expect(state.startDate).toEqual(moment().startOf("month"));
 });
+
+// Test Case : set End date filter
+test("Should set start date filter", () => {
+	const action = { type: "SET_END_DATE", date: moment().endOf("month") };
+	const state = filersReducer(undefined, action);
+	expect(state.endDate).toEqual(moment().endOf("month"));
+});
