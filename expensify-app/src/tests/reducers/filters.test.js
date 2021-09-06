@@ -12,3 +12,16 @@ test("Should generate default values for filter", () => {
 		endDate: moment().endOf("month"),
 	});
 });
+
+// Test Case : Action sort by date
+test("Should set sortBy to date", () => {
+	const action = { type: "SORT_BY_DATE" };
+	const initState = {
+		text: "",
+		sortBy: "amount",
+		startDate: undefined,
+		endDate: undefined,
+	};
+	const state = filersReducer(initState, action);
+	expect(state.sortBy).toBe("date");
+});
