@@ -1,5 +1,4 @@
 import expenseReducer from "../../reducers/expenses";
-import moment, { updateLocale } from "moment";
 
 const expenses = [
 	{ id: 78, title: "Hehi 1" },
