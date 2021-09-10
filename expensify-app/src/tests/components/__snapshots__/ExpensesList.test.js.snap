@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render expense list with expenses passed as props 1`] = `
+<div>
+  <ExpensesListItem
+    expense={
+      Object {
+        "amount": 45,
+        "createdAt": 78542,
+        "id": 1,
+        "note": "Testing is awesome",
+        "title": "Hego",
+      }
+    }
+    key="1"
+  />
+  <ExpensesListItem
+    expense={
+      Object {
+        "amount": 3000,
+        "createdAt": -345600000,
+        "id": 2,
+        "note": "",
+        "title": "Car Payment",
+      }
+    }
+    key="2"
+  />
+  <ExpensesListItem
+    expense={
+      Object {
+        "amount": 700,
+        "createdAt": 604800000,
+        "id": 3,
+        "note": "",
+        "title": "Real-state taxes",
+      }
+    }
+    key="3"
+  />
+</div>
+`;
