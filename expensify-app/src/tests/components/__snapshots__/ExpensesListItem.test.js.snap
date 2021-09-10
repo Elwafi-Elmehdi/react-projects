@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render expenselist item with props 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/edit/2"
+  >
+    <h3>
+      Car Payment
+    </h3>
+  </Link>
+  <h3>
+    -345600000
+  </h3>
+  <h3>
+    3000
+  </h3>
+</div>
+`;
