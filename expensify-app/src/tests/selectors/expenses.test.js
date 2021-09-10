@@ -2,7 +2,7 @@ import showExpenses from "../../selectors/showExpenses";
 import selectExpenses from "../../selectors/showExpenses";
 import moment from "moment";
 
-const expenses = [
+export const expenses = [
 	{
 		id: 1,
 		title: "Hego",

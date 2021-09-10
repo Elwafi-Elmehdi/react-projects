@@ -4,6 +4,6 @@
         "<rootDir>/src/tests/testSetup"
     ],
     "snapshotSerializers": [
-        "enzyme-to-json"
+        "enzyme-to-json/serializer"
     ]
 }
