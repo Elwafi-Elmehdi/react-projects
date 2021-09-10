@@ -7,3 +7,8 @@ test("Should render expense list with expenses passed as props", () => {
 	const wrapper = shallow(<ExpensesList expenses={expenses} />);
 	expect(wrapper).toMatchSnapshot();
 });
+
+test("Should render expense list without props", () => {
+	const wrapper = shallow(<ExpensesList expenses={[]} />);
+	expect(wrapper).toMatchSnapshot();
+});
