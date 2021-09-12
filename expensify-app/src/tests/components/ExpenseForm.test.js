@@ -20,4 +20,12 @@ test("Should render error msg",() => {
 		preventDefault() {}
 	})
 	expect(wrapper.state('error').length).toBeGreaterThan(0)
+	expect(wrapper).toMatchSnapshot();
+})
+
+test("Should get desc state",() => {
+	const desc = "New Description"
+	const wrapper = shallow(<ExpenseForm />);
+	wrapper.find('input').at(0).simulate('change',{target: {value:desc}});
+	expect(wrapper.state('description')).toBe(desc)
 })
