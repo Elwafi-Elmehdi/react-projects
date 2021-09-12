@@ -29,3 +29,10 @@ test("Should get desc state",() => {
 	wrapper.find('input').at(0).simulate('change',{target: {value:desc}});
 	expect(wrapper.state('description')).toBe(desc)
 })
+
+test("Should get note state",() => {
+	const note = "New Note"
+	const wrapper = shallow(<ExpenseForm />)
+	wrapper.find('textarea').simulate('change',{target:{value:note}})
+	expect(wrapper.state('note')).toBe(note)
+})
