@@ -9,7 +9,7 @@ exports[`Should render expense list with expenses passed as props 1`] = `
         "createdAt": 78542,
         "id": 1,
         "note": "Testing is awesome",
-        "title": "Hego",
+        "title": "Hegoeddwad",
       }
     }
     key="1"

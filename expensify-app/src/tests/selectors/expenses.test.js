@@ -5,8 +5,8 @@ import moment from "moment";
 export const expenses = [
 	{
 		id: 1,
-		title: "Hego",
-		amount: 45.0,
+		title: "Hegoeddwad",
+		amount: 45.00,
 		note: "Testing is awesome",
 		createdAt: 78542,
 	},

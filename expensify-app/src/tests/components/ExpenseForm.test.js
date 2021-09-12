@@ -52,8 +52,11 @@ test("Should get incorrect amount state",() => {
 })
 
 test("Should set new state for onsubmit form",() => {
-	const onSubmitSpy = jest.fn(() => {})
-	const wrapper = shallow(<ExpenseForm expenses={expenses[0]} onSubmit={onSubmitSpy} />)
+	const onSubmitSpy = jest.fn()
+	const wrapper = shallow(<ExpenseForm expense={expenses[0]} onSubmit={onSubmitSpy} />)
+	wrapper.find('form').simulate('submit',{
+		preventDefault() {}
+	})
 	expect(wrapper.state('error')).toBe('')
 	expect(onSubmitSpy).toHaveBeenCalled()
 })
