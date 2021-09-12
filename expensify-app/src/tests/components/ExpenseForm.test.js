@@ -36,3 +36,17 @@ test("Should get note state",() => {
 	wrapper.find('textarea').simulate('change',{target:{value:note}})
 	expect(wrapper.state('note')).toBe(note)
 })
+
+test("Should get amount state",() => {
+	const amount = "42.15"
+	const wrapper = shallow(<ExpenseForm />)
+	wrapper.find('input').at(1).simulate('change',{target:{value:amount}})
+	expect(wrapper.state("amount")).toBe(amount)
+})
+
+test("Should get incorrect amount state",() => {
+	const amount = "42.154"
+	const wrapper = shallow(<ExpenseForm />)
+	wrapper.find('input').at(1).simulate('change',{target:{value:amount}})
+	expect(wrapper.state("amount")).not.toBe(amount)
+})
