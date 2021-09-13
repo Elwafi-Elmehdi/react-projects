@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import ExpenseForm from "../../components/ExpenseForm";
 import { expenses } from "../selectors/expenses.test";
+import moment from "moment";
 
 test("Should render expense form correctly", () => {
 	const wrapper = shallow(<ExpenseForm />);
@@ -64,4 +65,11 @@ test("Should set new state for onsubmit form",() => {
 		createdAt:expenses[0].createdAt,
 		amount:expenses[0].amount
 	})
+})
+
+test("SHould set new Date on chnage date ",() => {
+	const wrapper = shallow(<ExpenseForm />)
+	const now = moment()
+	wrapper.find('SingleDatePicker').prop('onDateChange')(now)
+	expect(wrapper.state('createdAt')).toEqual(now)
 })
