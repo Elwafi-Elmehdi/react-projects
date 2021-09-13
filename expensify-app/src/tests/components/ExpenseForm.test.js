@@ -57,6 +57,6 @@ test("Should set new state for onsubmit form",() => {
 	wrapper.find('form').simulate('submit',{
 		preventDefault() {}
 	})
-	expect(wrapper.state('error')).toBe('')
+	expect(wrapper.state('error')).toBe("")
 	expect(onSubmitSpy).toHaveBeenCalled()
 })
