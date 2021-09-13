@@ -12,7 +12,7 @@ export const expenses = [
 	},
 	{
 		id: 2,
-		title: "Car Payment",
+		title: "Car Payment bill",
 		amount: 3000,
 		note: "",
 		createdAt: moment(0).subtract(4, "day").valueOf(),
@@ -20,7 +20,7 @@ export const expenses = [
 	{
 		id: 3,
 		amount: 700,
-		title: "Real-state taxes",
+		title: "Real-state taxes bill",
 		note: "",
 		createdAt: moment(0).add(7, "days").valueOf(),
 	},
@@ -29,7 +29,7 @@ export const expenses = [
 // Test Case : Filter by text
 test("Shoud filter by text value", () => {
 	const filters = {
-		text: "a",
+		text: "bill",
 		sortBy: "date",
 		startDate: 0,
 		endDate: 0,

@@ -21,7 +21,7 @@ exports[`Should render expense list with expenses passed as props 1`] = `
         "createdAt": -345600000,
         "id": 2,
         "note": "",
-        "title": "Car Payment",
+        "title": "Car Payment bill",
       }
     }
     key="2"
@@ -33,7 +33,7 @@ exports[`Should render expense list with expenses passed as props 1`] = `
         "createdAt": 604800000,
         "id": 3,
         "note": "",
-        "title": "Real-state taxes",
+        "title": "Real-state taxes bill",
       }
     }
     key="3"

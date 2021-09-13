@@ -7,7 +7,7 @@ exports[`Should render expenselist item with props 1`] = `
     to="/edit/2"
   >
     <h3>
-      Car Payment
+      Car Payment bill
     </h3>
   </Link>
   <h3>

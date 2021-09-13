@@ -331,7 +331,7 @@ exports[`Should render expense form with expense prop 1`] = `
       onChange={[Function]}
       placeholder="Title"
       type="text"
-      value="Car Payment"
+      value="Car Payment bill"
     />
     <input
       onChange={[Function]}

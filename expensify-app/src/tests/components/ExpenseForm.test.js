@@ -58,5 +58,10 @@ test("Should set new state for onsubmit form",() => {
 		preventDefault() {}
 	})
 	expect(wrapper.state('error')).toBe("")
-	expect(onSubmitSpy).toHaveBeenCalled()
+	expect(onSubmitSpy).toHaveBeenLastCalledWith({
+		title:expenses[0].title,
+		note:expenses[0].note,
+		createdAt:expenses[0].createdAt,
+		amount:expenses[0].amount
+	})
 })
