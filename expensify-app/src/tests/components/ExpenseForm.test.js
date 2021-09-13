@@ -67,7 +67,7 @@ test("Should set new state for onsubmit form",() => {
 	})
 })
 
-test("SHould set new Date on chnage date ",() => {
+test("Should set new Date on change date ",() => {
 	const wrapper = shallow(<ExpenseForm />)
 	const now = moment()
 	wrapper.find('SingleDatePicker').prop('onDateChange')(now)
