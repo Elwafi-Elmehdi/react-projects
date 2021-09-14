@@ -6,5 +6,5 @@ test("Should render AddExpensePage correclty",()=>{
     const onSubmit = jest.fn()
     const history = {push: jest.fn()}
     const wrapper = shallow(<AddExpensePage/>)
-
+    expect(wrapper).toMatchSnapshot()
 })
