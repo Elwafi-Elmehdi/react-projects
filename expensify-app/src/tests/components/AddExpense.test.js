@@ -12,8 +12,8 @@ test("Should render AddExpensePage correctly",()=>{
 
 test("Should render onSubmit",() => {
     const onSubmit = jest.fn()
-    const history = {push: jest.fn()}
+    const history = { push: jest.fn() }
     const wrapper = shallow(<AddExpensePage onSubmit={onSubmit} history={history}/>)
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0])
-    expect(history.push).toHaveBeenCalled()
+    expect(history.push).toHaveBeenCalledWith('/')
 })
