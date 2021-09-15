@@ -2,6 +2,10 @@ import React from "react";
 import ExpenseForm from "./ExpenseForm";
 import { connect } from "react-redux";
 import { editExpense, removeExpense } from "../actions/expenses";
+
+export class EditExpensePage extends React.Component {
+
+}
 const EditExpensePage = (props) => {
 	return (
 		<div>
@@ -28,4 +32,9 @@ const EditExpensePage = (props) => {
 	);
 };
 const mapStateToProps = (state) => ({ expenses: state.expenses });
-export default connect(mapStateToProps)(EditExpensePage);
+const mapDispatchToProps = (dispatch) => {
+	return {
+
+	}
+}
+export default connect(mapStateToProps,mapDispatchToProps())(EditExpensePage);
