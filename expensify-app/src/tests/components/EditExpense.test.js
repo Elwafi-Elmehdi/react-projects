@@ -1,14 +1,19 @@
 import React from "react";
-import EditExpensePage from "../../components/EditExpense";
+import {EditExpensePage} from "../../components/EditExpense";
 import {shallow} from "enzyme";
 import {expenses} from "../selectors/expenses.test";
 
-let wrapper,editExpense,history
+let wrapper,editExpense,history,match
 
 beforeEach(() => {
+    match = {
+        params: {
+            id: expenses[0].id
+        }
+    }
     editExpense = jest.fn()
     history = { push: jest.fn()}
-    wrapper = shallow(<EditExpensePage onSubmit={editExpense} history={history}/>)
+    wrapper = shallow(<EditExpensePage match={match}  onSubmit={editExpense} history={history}/>)
 })
 
 test("Should render Edit expense page",() => {
@@ -16,5 +21,6 @@ test("Should render Edit expense page",() => {
 })
 
 test("Should setup onSubmit",() => {
-    wrapper.find('button').simulate('click')
+    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0])
+    expect(history.push).toHaveBeenCalled()
 })
