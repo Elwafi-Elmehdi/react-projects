@@ -14,7 +14,6 @@ beforeEach(() => {
 });
 
 test("Should render AddExpensePage correctly", () => {
-	console.log(wrapper);
 	expect(wrapper).toMatchSnapshot();
 });
 
