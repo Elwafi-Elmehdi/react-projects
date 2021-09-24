@@ -1,7 +1,10 @@
 const path = require("path");
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = (env) => {
 	const isProd = env === "production";
+	const CSSExtract = new ExtractTextPlugin("styles.css");
 	return {
 		entry: "./src/app.js",
 		output: {
@@ -17,17 +20,13 @@ module.exports = (env) => {
 				},
 				{
 					test: /\.s?css$/,
-					use: [
-						// Creates `style` nodes from JS strings
-						"style-loader",
-						// Translates CSS into CommonJS
-						"css-loader",
-						// Compiles Sass to CSS
-						"sass-loader",
-					],
+					use: CSSExtract.extract({
+						use: ["css-loader", "sass-loader"],
+					}),
 				},
 			],
 		},
+		plugins: [CSSExtract],
 		devtool: isProd ? "source-map" : "eval-cheap-module-source-map",
 		devServer: {
 			contentBase: path.join(__dirname, "public"),
